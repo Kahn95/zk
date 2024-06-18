@@ -1,0 +1,3526 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://zcash.github.io/halo2/concepts/arithmetization.html
+Subject: PLONKish Arithmetization - The halo2 Book
+Date: Tue, 18 Jun 2024 13:51:35 +0900
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--ih9l6io4MFNxyUrye3BoH9tMghoRvwoW4T0FYs0S7G----"
+
+
+------MultipartBoundary--ih9l6io4MFNxyUrye3BoH9tMghoRvwoW4T0FYs0S7G----
+Content-Type: text/html
+Content-ID: <frame-8B38098411911FC921A9A4B98F37D3DD@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://zcash.github.io/halo2/concepts/arithmetization.html
+
+<!DOCTYPE html><html lang=3D"en" class=3D"light" dir=3D"ltr"><head><meta ht=
+tp-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+        <!-- Book generated using mdBook -->
+       =20
+        <title>PLONKish Arithmetization - The halo2 Book</title>
+
+
+        <!-- Custom HTML head -->
+       =20
+        <meta name=3D"description" content=3D"">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1">
+        <meta name=3D"theme-color" content=3D"rgb(255, 255, 255)">
+
+        <link rel=3D"icon" href=3D"https://zcash.github.io/halo2/favicon.sv=
+g">
+        <link rel=3D"shortcut icon" href=3D"https://zcash.github.io/halo2/f=
+avicon.png">
+        <link rel=3D"stylesheet" href=3D"https://zcash.github.io/halo2/css/=
+variables.css">
+        <link rel=3D"stylesheet" href=3D"https://zcash.github.io/halo2/css/=
+general.css">
+        <link rel=3D"stylesheet" href=3D"https://zcash.github.io/halo2/css/=
+chrome.css">
+        <link rel=3D"stylesheet" href=3D"https://zcash.github.io/halo2/css/=
+print.css" media=3D"print">
+
+        <!-- Fonts -->
+        <link rel=3D"stylesheet" href=3D"https://zcash.github.io/halo2/Font=
+Awesome/css/font-awesome.css">
+        <link rel=3D"stylesheet" href=3D"https://zcash.github.io/halo2/font=
+s/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel=3D"stylesheet" href=3D"https://zcash.github.io/halo2/high=
+light.css">
+       =20
+       =20
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class=3D"js sidebar-visible">
+    <div id=3D"body-container">
+        <!-- Provide site root to javascript -->
+       =20
+
+        <!-- Work around some values being stored in localStorage wrapped i=
+n quotes -->
+       =20
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+       =20
+
+        <input type=3D"checkbox" id=3D"sidebar-toggle-anchor" class=3D"hidd=
+en">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+       =20
+
+        <nav id=3D"sidebar" class=3D"sidebar" aria-label=3D"Table of conten=
+ts" aria-hidden=3D"false">
+            <div class=3D"sidebar-scrollbox">
+                <ol class=3D"chapter"><li class=3D"chapter-item expanded af=
+fix "><a href=3D"https://zcash.github.io/halo2/index.html" tabindex=3D"0">h=
+alo2</a></li><li class=3D"chapter-item expanded "><a href=3D"https://zcash.=
+github.io/halo2/concepts.html" tabindex=3D"0"><strong aria-hidden=3D"true">=
+1.</strong> Concepts</a></li><li><ol class=3D"section"><li class=3D"chapter=
+-item expanded "><a href=3D"https://zcash.github.io/halo2/concepts/proofs.h=
+tml" tabindex=3D"0"><strong aria-hidden=3D"true">1.1.</strong> Proof system=
+s</a></li><li class=3D"chapter-item expanded "><a href=3D"https://zcash.git=
+hub.io/halo2/concepts/arithmetization.html" class=3D"active" tabindex=3D"0"=
+><strong aria-hidden=3D"true">1.2.</strong> PLONKish Arithmetization</a></l=
+i><li class=3D"chapter-item expanded "><a href=3D"https://zcash.github.io/h=
+alo2/concepts/chips.html" tabindex=3D"0"><strong aria-hidden=3D"true">1.3.<=
+/strong> Chips</a></li><li class=3D"chapter-item expanded "><a href=3D"http=
+s://zcash.github.io/halo2/concepts/gadgets.html" tabindex=3D"0"><strong ari=
+a-hidden=3D"true">1.4.</strong> Gadgets</a></li></ol></li><li class=3D"chap=
+ter-item expanded "><a href=3D"https://zcash.github.io/halo2/user.html" tab=
+index=3D"0"><strong aria-hidden=3D"true">2.</strong> User Documentation</a>=
+</li><li><ol class=3D"section"><li class=3D"chapter-item expanded "><a href=
+=3D"https://zcash.github.io/halo2/user/dev-tools.html" tabindex=3D"0"><stro=
+ng aria-hidden=3D"true">2.1.</strong> Developer tools</a></li><li class=3D"=
+chapter-item expanded "><a href=3D"https://zcash.github.io/halo2/user/simpl=
+e-example.html" tabindex=3D"0"><strong aria-hidden=3D"true">2.2.</strong> A=
+ simple example</a></li><li class=3D"chapter-item expanded "><a href=3D"htt=
+ps://zcash.github.io/halo2/user/lookup-tables.html" tabindex=3D"0"><strong =
+aria-hidden=3D"true">2.3.</strong> Lookup tables</a></li><li class=3D"chapt=
+er-item expanded "><a href=3D"https://zcash.github.io/halo2/user/gadgets.ht=
+ml" tabindex=3D"0"><strong aria-hidden=3D"true">2.4.</strong> Gadgets</a></=
+li><li class=3D"chapter-item expanded "><a href=3D"https://zcash.github.io/=
+halo2/user/tips-and-tricks.html" tabindex=3D"0"><strong aria-hidden=3D"true=
+">2.5.</strong> Tips and tricks</a></li><li class=3D"chapter-item expanded =
+"><a href=3D"https://zcash.github.io/halo2/user/wasm-port.html" tabindex=3D=
+"0"><strong aria-hidden=3D"true">2.6.</strong> WASM Guide</a></li></ol></li=
+><li class=3D"chapter-item expanded "><a href=3D"https://zcash.github.io/ha=
+lo2/dev.html" tabindex=3D"0"><strong aria-hidden=3D"true">3.</strong> Devel=
+oper Documentation</a></li><li><ol class=3D"section"><li class=3D"chapter-i=
+tem expanded "><a href=3D"https://zcash.github.io/halo2/dev/features.html" =
+tabindex=3D"0"><strong aria-hidden=3D"true">3.1.</strong> Feature developme=
+nt</a></li></ol></li><li class=3D"chapter-item expanded "><a href=3D"https:=
+//zcash.github.io/halo2/design.html" tabindex=3D"0"><strong aria-hidden=3D"=
+true">4.</strong> Design</a></li><li><ol class=3D"section"><li class=3D"cha=
+pter-item expanded "><a href=3D"https://zcash.github.io/halo2/design/provin=
+g-system.html" tabindex=3D"0"><strong aria-hidden=3D"true">4.1.</strong> Pr=
+oving system</a></li><li><ol class=3D"section"><li class=3D"chapter-item ex=
+panded "><a href=3D"https://zcash.github.io/halo2/design/proving-system/loo=
+kup.html" tabindex=3D"0"><strong aria-hidden=3D"true">4.1.1.</strong> Looku=
+p argument</a></li><li class=3D"chapter-item expanded "><a href=3D"https://=
+zcash.github.io/halo2/design/proving-system/permutation.html" tabindex=3D"0=
+"><strong aria-hidden=3D"true">4.1.2.</strong> Permutation argument</a></li=
+><li class=3D"chapter-item expanded "><a href=3D"https://zcash.github.io/ha=
+lo2/design/proving-system/circuit-commitments.html" tabindex=3D"0"><strong =
+aria-hidden=3D"true">4.1.3.</strong> Circuit commitments</a></li><li class=
+=3D"chapter-item expanded "><a href=3D"https://zcash.github.io/halo2/design=
+/proving-system/vanishing.html" tabindex=3D"0"><strong aria-hidden=3D"true"=
+>4.1.4.</strong> Vanishing argument</a></li><li class=3D"chapter-item expan=
+ded "><a href=3D"https://zcash.github.io/halo2/design/proving-system/multip=
+oint-opening.html" tabindex=3D"0"><strong aria-hidden=3D"true">4.1.5.</stro=
+ng> Multipoint opening argument</a></li><li class=3D"chapter-item expanded =
+"><a href=3D"https://zcash.github.io/halo2/design/proving-system/inner-prod=
+uct.html" tabindex=3D"0"><strong aria-hidden=3D"true">4.1.6.</strong> Inner=
+ product argument</a></li><li class=3D"chapter-item expanded "><a href=3D"h=
+ttps://zcash.github.io/halo2/design/proving-system/comparison.html" tabinde=
+x=3D"0"><strong aria-hidden=3D"true">4.1.7.</strong> Comparison to other wo=
+rk</a></li></ol></li><li class=3D"chapter-item expanded "><a href=3D"https:=
+//zcash.github.io/halo2/design/protocol.html" tabindex=3D"0"><strong aria-h=
+idden=3D"true">4.2.</strong> Protocol Description</a></li><li class=3D"chap=
+ter-item expanded "><a href=3D"https://zcash.github.io/halo2/design/impleme=
+ntation.html" tabindex=3D"0"><strong aria-hidden=3D"true">4.3.</strong> Imp=
+lementation</a></li><li><ol class=3D"section"><li class=3D"chapter-item exp=
+anded "><a href=3D"https://zcash.github.io/halo2/design/implementation/proo=
+fs.html" tabindex=3D"0"><strong aria-hidden=3D"true">4.3.1.</strong> Proofs=
+</a></li><li class=3D"chapter-item expanded "><a href=3D"https://zcash.gith=
+ub.io/halo2/design/implementation/fields.html" tabindex=3D"0"><strong aria-=
+hidden=3D"true">4.3.2.</strong> Fields</a></li><li class=3D"chapter-item ex=
+panded "><a href=3D"https://zcash.github.io/halo2/design/implementation/sel=
+ector-combining.html" tabindex=3D"0"><strong aria-hidden=3D"true">4.3.3.</s=
+trong> Selector combining</a></li></ol></li><li class=3D"chapter-item expan=
+ded "><a href=3D"https://zcash.github.io/halo2/design/gadgets.html" tabinde=
+x=3D"0"><strong aria-hidden=3D"true">4.4.</strong> Gadgets</a></li><li><ol =
+class=3D"section"><li class=3D"chapter-item expanded "><a href=3D"https://z=
+cash.github.io/halo2/design/gadgets/ecc.html" tabindex=3D"0"><strong aria-h=
+idden=3D"true">4.4.1.</strong> Elliptic curve cryptography</a></li><li><ol =
+class=3D"section"><li class=3D"chapter-item expanded "><a href=3D"https://z=
+cash.github.io/halo2/design/gadgets/ecc/witnessing-points.html" tabindex=3D=
+"0"><strong aria-hidden=3D"true">4.4.1.1.</strong> Witnessing points</a></l=
+i><li class=3D"chapter-item expanded "><a href=3D"https://zcash.github.io/h=
+alo2/design/gadgets/ecc/addition.html" tabindex=3D"0"><strong aria-hidden=
+=3D"true">4.4.1.2.</strong> Incomplete and complete addition</a></li><li cl=
+ass=3D"chapter-item expanded "><a href=3D"https://zcash.github.io/halo2/des=
+ign/gadgets/ecc/fixed-base-scalar-mul.html" tabindex=3D"0"><strong aria-hid=
+den=3D"true">4.4.1.3.</strong> Fixed-base scalar multiplication</a></li><li=
+ class=3D"chapter-item expanded "><a href=3D"https://zcash.github.io/halo2/=
+design/gadgets/ecc/var-base-scalar-mul.html" tabindex=3D"0"><strong aria-hi=
+dden=3D"true">4.4.1.4.</strong> Variable-base scalar multiplication</a></li=
+></ol></li><li class=3D"chapter-item expanded "><a href=3D"https://zcash.gi=
+thub.io/halo2/design/gadgets/sinsemilla.html" tabindex=3D"0"><strong aria-h=
+idden=3D"true">4.4.2.</strong> Sinsemilla</a></li><li><ol class=3D"section"=
+><li class=3D"chapter-item expanded "><a href=3D"https://zcash.github.io/ha=
+lo2/design/gadgets/sinsemilla/merkle-crh.html" tabindex=3D"0"><strong aria-=
+hidden=3D"true">4.4.2.1.</strong> MerkleCRH</a></li></ol></li><li class=3D"=
+chapter-item expanded "><a href=3D"https://zcash.github.io/halo2/design/gad=
+gets/decomposition.html" tabindex=3D"0"><strong aria-hidden=3D"true">4.4.3.=
+</strong> Decomposition</a></li><li class=3D"chapter-item expanded "><a hre=
+f=3D"https://zcash.github.io/halo2/design/gadgets/sha256.html" tabindex=3D"=
+0"><strong aria-hidden=3D"true">4.4.4.</strong> SHA-256</a></li><li><ol cla=
+ss=3D"section"><li class=3D"chapter-item expanded "><a href=3D"https://zcas=
+h.github.io/halo2/design/gadgets/sha256/table16.html" tabindex=3D"0"><stron=
+g aria-hidden=3D"true">4.4.4.1.</strong> 16-bit table chip</a></li></ol></l=
+i></ol></li></ol></li><li class=3D"chapter-item expanded "><a href=3D"https=
+://zcash.github.io/halo2/background.html" tabindex=3D"0"><strong aria-hidde=
+n=3D"true">5.</strong> Background Material</a></li><li><ol class=3D"section=
+"><li class=3D"chapter-item expanded "><a href=3D"https://zcash.github.io/h=
+alo2/background/fields.html" tabindex=3D"0"><strong aria-hidden=3D"true">5.=
+1.</strong> Fields</a></li><li class=3D"chapter-item expanded "><a href=3D"=
+https://zcash.github.io/halo2/background/polynomials.html" tabindex=3D"0"><=
+strong aria-hidden=3D"true">5.2.</strong> Polynomials</a></li><li class=3D"=
+chapter-item expanded "><a href=3D"https://zcash.github.io/halo2/background=
+/groups.html" tabindex=3D"0"><strong aria-hidden=3D"true">5.3.</strong> Cry=
+ptographic groups</a></li><li class=3D"chapter-item expanded "><a href=3D"h=
+ttps://zcash.github.io/halo2/background/curves.html" tabindex=3D"0"><strong=
+ aria-hidden=3D"true">5.4.</strong> Elliptic curves</a></li><li class=3D"ch=
+apter-item expanded "><a href=3D"https://zcash.github.io/halo2/background/p=
+c-ipa.html" tabindex=3D"0"><strong aria-hidden=3D"true">5.5.</strong> Polyn=
+omial commitment using inner product argument</a></li><li class=3D"chapter-=
+item expanded "><a href=3D"https://zcash.github.io/halo2/background/recursi=
+on.html" tabindex=3D"0"><strong aria-hidden=3D"true">5.6.</strong> Recursio=
+n</a></li></ol></li></ol>
+            </div>
+            <div id=3D"sidebar-resize-handle" class=3D"sidebar-resize-handl=
+e">
+                <div class=3D"sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+       =20
+
+        <div id=3D"page-wrapper" class=3D"page-wrapper">
+
+            <div class=3D"page">
+                                <div id=3D"menu-bar-hover-placeholder"></di=
+v>
+                <div id=3D"menu-bar" class=3D"menu-bar sticky" style=3D"top=
+: 251px;">
+                    <div class=3D"left-buttons">
+                        <label id=3D"sidebar-toggle" class=3D"icon-button" =
+for=3D"sidebar-toggle-anchor" title=3D"Toggle Table of Contents" aria-label=
+=3D"Toggle Table of Contents" aria-controls=3D"sidebar" aria-expanded=3D"tr=
+ue">
+                            <i class=3D"fa fa-bars"></i>
+                        </label>
+                        <button id=3D"theme-toggle" class=3D"icon-button" t=
+ype=3D"button" title=3D"Change theme" aria-label=3D"Change theme" aria-hasp=
+opup=3D"true" aria-expanded=3D"false" aria-controls=3D"theme-list">
+                            <i class=3D"fa fa-paint-brush"></i>
+                        </button>
+                        <ul id=3D"theme-list" class=3D"theme-popup" aria-la=
+bel=3D"Themes" role=3D"menu">
+                            <li role=3D"none"><button role=3D"menuitem" cla=
+ss=3D"theme theme-selected" id=3D"light">Light</button></li>
+                            <li role=3D"none"><button role=3D"menuitem" cla=
+ss=3D"theme" id=3D"rust">Rust</button></li>
+                            <li role=3D"none"><button role=3D"menuitem" cla=
+ss=3D"theme" id=3D"coal">Coal</button></li>
+                            <li role=3D"none"><button role=3D"menuitem" cla=
+ss=3D"theme" id=3D"navy">Navy</button></li>
+                            <li role=3D"none"><button role=3D"menuitem" cla=
+ss=3D"theme" id=3D"ayu">Ayu</button></li>
+                        </ul>
+                        <button id=3D"search-toggle" class=3D"icon-button" =
+type=3D"button" title=3D"Search. (Shortkey: s)" aria-label=3D"Toggle Search=
+bar" aria-expanded=3D"false" aria-keyshortcuts=3D"S" aria-controls=3D"searc=
+hbar">
+                            <i class=3D"fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class=3D"menu-title">The halo2 Book</h1>
+
+                    <div class=3D"right-buttons">
+                        <a href=3D"https://zcash.github.io/halo2/print.html=
+" title=3D"Print this book" aria-label=3D"Print this book">
+                            <i id=3D"print-button" class=3D"fa fa-print"></=
+i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id=3D"search-wrapper" class=3D"hidden">
+                    <form id=3D"searchbar-outer" class=3D"searchbar-outer">
+                        <input type=3D"search" id=3D"searchbar" name=3D"sea=
+rchbar" placeholder=3D"Search this book ..." aria-controls=3D"searchresults=
+-outer" aria-describedby=3D"searchresults-header">
+                    </form>
+                    <div id=3D"searchresults-outer" class=3D"searchresults-=
+outer hidden">
+                        <div id=3D"searchresults-header" class=3D"searchres=
+ults-header"></div>
+                        <ul id=3D"searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sideba=
+r toggle button are added to the DOM -->
+               =20
+
+                <div id=3D"content" class=3D"content">
+                    <main>
+                        <link rel=3D"stylesheet" href=3D"https://cdn.jsdeli=
+vr.net/npm/katex@0.12.0/dist/katex.min.css" crossorigin=3D"anonymous">
+<h1 id=3D"plonkish-arithmetization"><a class=3D"header" href=3D"https://zca=
+sh.github.io/halo2/concepts/arithmetization.html#plonkish-arithmetization">=
+PLONKish Arithmetization</a></h1>
+<p>The arithmetization used by Halo 2 comes from <a href=3D"https://eprint.=
+iacr.org/2019/953">PLONK</a>, or
+more precisely its extension UltraPLONK that supports custom gates and look=
+up arguments. We'll
+call it <a href=3D"https://twitter.com/feministPLT/status/14138159277040148=
+50"><em><strong>PLONKish</strong></em></a>.</p>
+<p><em><strong>PLONKish circuits</strong></em> are defined in terms of a re=
+ctangular matrix of values. We refer to
+<em><strong>rows</strong></em>, <em><strong>columns</strong></em>, and <em>=
+<strong>cells</strong></em> of this matrix with the conventional meanings.<=
+/p>
+<p>A PLONKish circuit depends on a <em><strong>configuration</strong></em>:=
+</p>
+<ul>
+<li>
+<p>A finite field <span class=3D"katex"><span class=3D"katex-html" aria-hid=
+den=3D"true"><span class=3D"base"><span class=3D"strut" style=3D"height:0.6=
+889em;"></span><span class=3D"mord mathbb">F</span></span></span></span>, w=
+here cell values (for a given statement and witness) will be
+elements of <span class=3D"katex"><span class=3D"katex-html" aria-hidden=3D=
+"true"><span class=3D"base"><span class=3D"strut" style=3D"height:0.6889em;=
+"></span><span class=3D"mord mathbb">F</span></span></span></span>.</p>
+</li>
+<li>
+<p>The number of columns in the matrix, and a specification of each column =
+as being
+<em><strong>fixed</strong></em>, <em><strong>advice</strong></em>, or <em><=
+strong>instance</strong></em>. Fixed columns are fixed by the circuit;
+advice columns correspond to witness values; and instance columns are norma=
+lly used for
+public inputs (technically, they can be used for any elements shared betwee=
+n the prover
+and verifier).</p>
+</li>
+<li>
+<p>A subset of the columns that can participate in equality constraints.</p=
+>
+</li>
+<li>
+<p>A <em><strong>maximum constraint degree</strong></em>.</p>
+</li>
+<li>
+<p>A sequence of <em><strong>polynomial constraints</strong></em>. These ar=
+e multivariate polynomials over
+<span class=3D"katex"><span class=3D"katex-html" aria-hidden=3D"true"><span=
+ class=3D"base"><span class=3D"strut" style=3D"height:0.6889em;"></span><sp=
+an class=3D"mord mathbb">F</span></span></span></span> that must evaluate t=
+o zero <em>for each row</em>. The variables in a polynomial
+constraint may refer to a cell in a given column of the current row, or a g=
+iven column of
+another row relative to this one (with wrap-around, i.e. taken modulo <span=
+ class=3D"katex"><span class=3D"katex-html" aria-hidden=3D"true"><span clas=
+s=3D"base"><span class=3D"strut" style=3D"height:0.4306em;"></span><span cl=
+ass=3D"mord mathnormal">n</span></span></span></span>). The maximum
+degree of each polynomial is given by the maximum constraint degree.</p>
+</li>
+<li>
+<p>A sequence of <em><strong>lookup arguments</strong></em> defined over tu=
+ples of <em><strong>input expressions</strong></em>
+(which are multivariate polynomials as above) and <em><strong>table columns=
+</strong></em>.</p>
+</li>
+</ul>
+<p>A PLONKish circuit also defines:</p>
+<ul>
+<li>
+<p>The number of rows <span class=3D"katex"><span class=3D"katex-html" aria=
+-hidden=3D"true"><span class=3D"base"><span class=3D"strut" style=3D"height=
+:0.4306em;"></span><span class=3D"mord mathnormal">n</span></span></span></=
+span> in the matrix. <span class=3D"katex"><span class=3D"katex-html" aria-=
+hidden=3D"true"><span class=3D"base"><span class=3D"strut" style=3D"height:=
+0.4306em;"></span><span class=3D"mord mathnormal">n</span></span></span></s=
+pan> must correspond to the size of a multiplicative
+subgroup of <span class=3D"katex"><span class=3D"katex-html" aria-hidden=3D=
+"true"><span class=3D"base"><span class=3D"strut" style=3D"height:0.7713em;=
+"></span><span class=3D"mord"><span class=3D"mord mathbb">F</span><span cla=
+ss=3D"msupsub"><span class=3D"vlist-t"><span class=3D"vlist-r"><span class=
+=3D"vlist" style=3D"height:0.7713em;"><span style=3D"top:-3.063em;margin-ri=
+ght:0.05em;"><span class=3D"pstrut" style=3D"height:2.7em;"></span><span cl=
+ass=3D"sizing reset-size6 size3 mtight"><span class=3D"mbin mtight">=C3=97<=
+/span></span></span></span></span></span></span></span></span></span></span=
+>; typically a power of two.</p>
+</li>
+<li>
+<p>A sequence of <em><strong>equality constraints</strong></em>, which spec=
+ify that two given cells must have equal
+values.</p>
+</li>
+<li>
+<p>The values of the fixed columns at each row.</p>
+</li>
+</ul>
+<p>From a circuit description we can generate a <em><strong>proving key</st=
+rong></em> and a <em><strong>verification key</strong></em>,
+which are needed for the operations of proving and verification for that ci=
+rcuit.</p>
+<blockquote>
+<p>Note that we specify the ordering of columns, polynomial constraints, lo=
+okup arguments, and
+equality constraints, even though these do not affect the meaning of the ci=
+rcuit. This makes
+it easier to define the generation of proving and verification keys as a de=
+terministic
+process.</p>
+</blockquote>
+<p>Typically, a configuration will define polynomial constraints that are s=
+witched off and on by
+<em><strong>selectors</strong></em> defined in fixed columns. For example, =
+a constraint <span class=3D"katex"><span class=3D"katex-html" aria-hidden=
+=3D"true"><span class=3D"base"><span class=3D"strut" style=3D"height:0.6389=
+em;vertical-align:-0.1944em;"></span><span class=3D"mord"><span class=3D"mo=
+rd mathnormal" style=3D"margin-right:0.03588em;">q</span><span class=3D"msu=
+psub"><span class=3D"vlist-t vlist-t2"><span class=3D"vlist-r"><span class=
+=3D"vlist" style=3D"height:0.3117em;"><span style=3D"top:-2.55em;margin-lef=
+t:-0.0359em;margin-right:0.05em;"><span class=3D"pstrut" style=3D"height:2.=
+7em;"></span><span class=3D"sizing reset-size6 size3 mtight"><span class=3D=
+"mord mathnormal mtight">i</span></span></span></span><span class=3D"vlist-=
+s">=E2=80=8B</span></span><span class=3D"vlist-r"><span class=3D"vlist" sty=
+le=3D"height:0.15em;"><span></span></span></span></span></span></span><span=
+ class=3D"mspace" style=3D"margin-right:0.2222em;"></span><span class=3D"mb=
+in">=E2=8B=85</span><span class=3D"mspace" style=3D"margin-right:0.2222em;"=
+></span></span><span class=3D"base"><span class=3D"strut" style=3D"height:1=
+em;vertical-align:-0.25em;"></span><span class=3D"mord mathnormal">p</span>=
+<span class=3D"mopen">(</span><span class=3D"mord">...</span><span class=3D=
+"mclose">)</span><span class=3D"mspace" style=3D"margin-right:0.2778em;"></=
+span><span class=3D"mrel">=3D</span><span class=3D"mspace" style=3D"margin-=
+right:0.2778em;"></span></span><span class=3D"base"><span class=3D"strut" s=
+tyle=3D"height:0.6444em;"></span><span class=3D"mord">0</span></span></span=
+></span> can
+be switched off for a particular row <span class=3D"katex"><span class=3D"k=
+atex-html" aria-hidden=3D"true"><span class=3D"base"><span class=3D"strut" =
+style=3D"height:0.6595em;"></span><span class=3D"mord mathnormal">i</span><=
+/span></span></span> by setting <span class=3D"katex"><span class=3D"katex-=
+html" aria-hidden=3D"true"><span class=3D"base"><span class=3D"strut" style=
+=3D"height:0.625em;vertical-align:-0.1944em;"></span><span class=3D"mord"><=
+span class=3D"mord mathnormal" style=3D"margin-right:0.03588em;">q</span><s=
+pan class=3D"msupsub"><span class=3D"vlist-t vlist-t2"><span class=3D"vlist=
+-r"><span class=3D"vlist" style=3D"height:0.3117em;"><span style=3D"top:-2.=
+55em;margin-left:-0.0359em;margin-right:0.05em;"><span class=3D"pstrut" sty=
+le=3D"height:2.7em;"></span><span class=3D"sizing reset-size6 size3 mtight"=
+><span class=3D"mord mathnormal mtight">i</span></span></span></span><span =
+class=3D"vlist-s">=E2=80=8B</span></span><span class=3D"vlist-r"><span clas=
+s=3D"vlist" style=3D"height:0.15em;"><span></span></span></span></span></sp=
+an></span><span class=3D"mspace" style=3D"margin-right:0.2778em;"></span><s=
+pan class=3D"mrel">=3D</span><span class=3D"mspace" style=3D"margin-right:0=
+.2778em;"></span></span><span class=3D"base"><span class=3D"strut" style=3D=
+"height:0.6444em;"></span><span class=3D"mord">0</span></span></span></span=
+>. In this case we sometimes refer
+to a set of constraints controlled by a set of selector columns that are de=
+signed to be used
+together, as a <em><strong>gate</strong></em>. Typically there will be a <e=
+m><strong>standard gate</strong></em> that supports generic
+operations like field multiplication and division, and possibly also <em><s=
+trong>custom gates</strong></em> that
+support more specialized operations.</p>
+
+                    </main>
+
+                    <nav class=3D"nav-wrapper" aria-label=3D"Page navigatio=
+n">
+                        <!-- Mobile navigation buttons -->
+                            <a rel=3D"prev" href=3D"https://zcash.github.io=
+/halo2/concepts/proofs.html" class=3D"mobile-nav-chapters previous" title=
+=3D"Previous chapter" aria-label=3D"Previous chapter" aria-keyshortcuts=3D"=
+Left">
+                                <i class=3D"fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel=3D"next prefetch" href=3D"https://zcash.=
+github.io/halo2/concepts/chips.html" class=3D"mobile-nav-chapters next" tit=
+le=3D"Next chapter" aria-label=3D"Next chapter" aria-keyshortcuts=3D"Right"=
+>
+                                <i class=3D"fa fa-angle-right"></i>
+                            </a>
+
+                        <div style=3D"clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class=3D"nav-wide-wrapper" aria-label=3D"Page navigation">
+                    <a rel=3D"prev" href=3D"https://zcash.github.io/halo2/c=
+oncepts/proofs.html" class=3D"nav-chapters previous" title=3D"Previous chap=
+ter" aria-label=3D"Previous chapter" aria-keyshortcuts=3D"Left">
+                        <i class=3D"fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel=3D"next prefetch" href=3D"https://zcash.github.i=
+o/halo2/concepts/chips.html" class=3D"nav-chapters next" title=3D"Next chap=
+ter" aria-label=3D"Next chapter" aria-keyshortcuts=3D"Right">
+                        <i class=3D"fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+       =20
+
+
+       =20
+       =20
+       =20
+
+       =20
+       =20
+       =20
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+   =20
+
+</body><chatgpt-sidebar data-gpts-theme=3D"light"><template shadowmode=3D"o=
+pen"><div class=3D"chat-gpt-quick-query-container"><div class=3D"css-1iym7t=
+c ant-app"><div dir=3D"ltr" class=3D"quick-action-container absolute top-0 =
+left-0 text-[--gpts-primary-text-color] leading-[1.5] z-[--gpts-topmost-zin=
+dex]"></div><div dir=3D"ltr" class=3D"disable-translator-fab"><div class=3D=
+"chatgpt-quick-query-float show"><div class=3D"relative" style=3D"transform=
+: translate3d(0px, 0px, 0px);"><div class=3D"pagetoolbar-container"><div cl=
+ass=3D"page-reader-container animate-fade-in"><button class=3D"w-[--btn-siz=
+e] h-[--btn-size] flex justify-center items-center cursor-pointer p-0 round=
+ed-full border-none outline-none bg-transparent hover:bg-primary4 text-blac=
+k-text2 hover:text-primary5 transition-colors"><div class=3D"relative flex"=
+><svg xmlns=3D"http://www.w3.org/2000/svg" width=3D"18" height=3D"18" viewB=
+ox=3D"0 0 16 16" fill=3D"none"><g clip-path=3D"url(#clip0_21825_972590.9201=
+388697810884)"><path fill-rule=3D"evenodd" clip-rule=3D"evenodd" d=3D"M1.33=
+464 1.97559C0.966446 1.97559 0.667969 2.27406 0.667969 2.64225V12.6423C0.66=
+7969 13.0104 0.966446 13.3089 1.33464 13.3089H6.0013C6.35492 13.3089 6.6940=
+6 13.4494 6.94411 13.6994C7.19416 13.9495 7.33464 14.2886 7.33464 14.6423C7=
+.33464 15.0104 7.63311 15.3089 8.0013 15.3089C8.36949 15.3089 8.66797 15.01=
+04 8.66797 14.6423C8.66797 14.2886 8.80844 13.9495 9.05849 13.6994C9.30854 =
+13.4494 9.64768 13.3089 10.0013 13.3089H14.668C15.0362 13.3089 15.3346 13.0=
+104 15.3346 12.6423V2.64225C15.3346 2.27406 15.0362 1.97559 14.668 1.97559H=
+10.668C9.78391 1.97559 8.93607 2.32678 8.31095 2.9519C8.19876 3.06408 8.095=
+4 3.18344 8.0013 3.3089C7.90721 3.18344 7.80384 3.06408 7.69166 2.9519C7.06=
+654 2.32678 6.21869 1.97559 5.33464 1.97559H1.33464ZM7.33464 12.3328V5.3089=
+2C7.33464 4.77849 7.12392 4.26978 6.74885 3.89471C6.37378 3.51963 5.86507 3=
+.30892 5.33464 3.30892H2.0013V11.9756H6.0013C6.47346 11.9756 6.9327 12.1008=
+ 7.33464 12.3328ZM8.66797 12.3328C9.06991 12.1008 9.52915 11.9756 10.0013 1=
+1.9756H14.0013V3.30892H10.668C10.1375 3.30892 9.62883 3.51963 9.25376 3.894=
+71C8.87868 4.26978 8.66797 4.77849 8.66797 5.30892V12.3328Z" fill=3D"curren=
+tColor"></path><path d=3D"M10.168 9.31087C9.79978 9.31087 9.5013 9.60935 9.=
+5013 9.97754C9.5013 10.3457 9.79978 10.6442 10.168 10.6442H12.5013C12.8695 =
+10.6442 13.168 10.3457 13.168 9.97754C13.168 9.60935 12.8695 9.31087 12.501=
+3 9.31087H10.168Z" fill=3D"currentColor"></path><path d=3D"M10.168 6.97754C=
+9.79978 6.97754 9.5013 7.27602 9.5013 7.64421C9.5013 8.0124 9.79978 8.31087=
+ 10.168 8.31087H12.5013C12.8695 8.31087 13.168 8.0124 13.168 7.64421C13.168=
+ 7.27602 12.8695 6.97754 12.5013 6.97754H10.168Z" fill=3D"currentColor"></p=
+ath><path d=3D"M10.168 4.64421C9.79978 4.64421 9.5013 4.94268 9.5013 5.3108=
+7C9.5013 5.67906 9.79978 5.97754 10.168 5.97754H12.5013C12.8695 5.97754 13.=
+168 5.67906 13.168 5.31087C13.168 4.94268 12.8695 4.64421 12.5013 4.64421H1=
+0.168Z" fill=3D"currentColor"></path></g><defs><clipPath id=3D"clip0_21825_=
+972590.9201388697810884"><rect width=3D"16" height=3D"16" fill=3D"white" tr=
+ansform=3D"translate(0.000976562)"></rect></clipPath></defs></svg></div></b=
+utton></div></div><div role=3D"button" class=3D"float-btn" style=3D"touch-a=
+ction: none;"><div class=3D"flex h-full"><img class=3D"w-6 h-6 pointer-even=
+ts-none" src=3D"chrome-extension://difoiogjjojoaoomphldepapgpbgkhkb/assets/=
+logo-OYJ34ERC.png" alt=3D"logo icon"></div><span class=3D"ant-dropdown-trig=
+ger close-btn"><svg width=3D"8" height=3D"10" viewBox=3D"0 0 9 9" fill=3D"n=
+one" xmlns=3D"http://www.w3.org/2000/svg" hanging=3D"8"><path d=3D"M7.83725=
+ 1.30615L1.30664 7.83676M1.30664 1.30615L7.83725 7.83676" stroke=3D"current=
+Color" stroke-width=3D"1.2" stroke-linecap=3D"round" stroke-linejoin=3D"rou=
+nd"></path></svg></span></div></div></div><div class=3D"chat-gpt-query-mode=
+l-wrapper outline-none active:outline-none focus:outline-none " tabindex=3D=
+"1"><div class=3D"chat-gpt-query-model text-base min-w-[440px] max-sm:min-w=
+-[90vw]"><div class=3D"flip-y"><div></div></div><div class=3D"absolute -lef=
+t-1 z-[1001] h-full w-2" style=3D"touch-action: none;"><div class=3D"h-full=
+ w-1/4 m-auto cursor-ew-resize"></div></div><button class=3D"size-10 absolu=
+te z-[-1] bottom-[10px] flex-center p-0 outline-none border-none text-title=
+ bg-bg2 cursor-pointer hover:text-primary transition-colors -left-[38px] ro=
+unded-tl-full rounded-bl-full" style=3D"transform: translate3d(0px, 0px, 0p=
+x); box-shadow: rgba(0, 0, 0, 0.04) -12px 0px 32px 0px, rgba(0, 0, 0, 0.08)=
+ -8px 0px 16px 0px, rgba(0, 0, 0, 0.12) -4px 0px 8px 0px; touch-action: non=
+e;"><svg aria-hidden=3D"true" focusable=3D"false" role=3D"img" class=3D"ml-=
+1" viewBox=3D"0 0 16 16" width=3D"20" height=3D"20" fill=3D"currentColor" s=
+tyle=3D"display: inline-block; user-select: none; vertical-align: text-bott=
+om; overflow: visible;"><path d=3D"M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.=
+22-3.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l3.22 3.22a.7=
+49.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-3.22 3.22a.751.751 =
+0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1=
+.06Z"></path></svg></button></div></div></div><div></div><div class=3D"fixe=
+d inset-0 pointer-events-none z-[--gpts-topmost-zindex] overflow-hidden"><d=
+iv class=3D"grid auto-cols-max auto-rows-max p-[16px]" style=3D"width: 0px;=
+ height: 0px; place-content: start; transform: none;"><div class=3D"grid cu=
+rsor-pointer group grid-rows-[1fr] relative hover:grid-cols-[1fr] max-w-max=
+ max-h-max hover:delay-0 grid-cols-[0fr] delay-150" style=3D"transition-pro=
+perty: grid-template-columns; transition-timing-function: ease-in-out; tran=
+sition-duration: 150ms; opacity: 0; visibility: hidden; pointer-events: non=
+e;"><div class=3D"min-w-[32px] min-h-[32px] rounded-[6px] px-[9px] gap-[9px=
+] max-w-max backdrop-blur-sm overflow-hidden flex-align text-white bg-black=
+/65" style=3D"grid-area: 1 / 1;"><img src=3D"chrome-extension://difoiogjjoj=
+oaoomphldepapgpbgkhkb/assets/logo-OYJ34ERC.png" alt=3D"Logo" class=3D"size-=
+[14px] grayscale brightness-[10]"><div class=3D"flex-align gap-[4px]"><div =
+class=3D"whitespace-nowrap shrink-0">AI Tools</div></div></div><span class=
+=3D"ant-dropdown-trigger absolute -top-[7px] -right-[7px] opacity-0 size-[1=
+4px] flex-center bg-[#8B8F91] text-white rounded-full transition-opacity gr=
+oup-hover:opacity-100 group-hover:delay-150 opacity-0 delay-0"><svg aria-hi=
+dden=3D"true" focusable=3D"false" role=3D"img" class=3D"octicon octicon-x" =
+viewBox=3D"0 0 12 12" width=3D"10" height=3D"10" fill=3D"currentColor" styl=
+e=3D"display: inline-block; user-select: none; vertical-align: text-bottom;=
+ overflow: visible;"><path d=3D"M2.22 2.22a.749.749 0 0 1 1.06 0L6 4.939 8.=
+72 2.22a.749.749 0 1 1 1.06 1.06L7.061 6 9.78 8.72a.749.749 0 1 1-1.06 1.06=
+L6 7.061 3.28 9.78a.749.749 0 1 1-1.06-1.06L4.939 6 2.22 3.28a.749.749 0 0 =
+1 0-1.06Z"></path></svg></span></div></div></div></div></div><meta name=3D"=
+sider-selection-tags" content=3D"disable-translator-fab"></template></chatg=
+pt-sidebar><chatgpt-sidebar-popups data-gpts-theme=3D"light"><template shad=
+owmode=3D"open"><div class=3D"chat-gpt-quick-query-container" style=3D"posi=
+tion: relative; z-index: 2147483647;"><div class=3D"css-1iym7tc ant-app"><d=
+iv><span></span><span class=3D"ant-dropdown-trigger"></span></div></div></d=
+iv></template></chatgpt-sidebar-popups></html>
+------MultipartBoundary--ih9l6io4MFNxyUrye3BoH9tMghoRvwoW4T0FYs0S7G----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://zcash.github.io/halo2/css/variables.css
+
+@charset "utf-8";
+
+:root { --sidebar-width: 300px; --sidebar-resize-indicator-width: 8px; --si=
+debar-resize-indicator-space: 2px; --page-padding: 15px; --content-max-widt=
+h: 750px; --menu-bar-height: 50px; --mono-font: "Source Code Pro", Consolas=
+, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace; --code-fo=
+nt-size: 0.875em; }
+
+.ayu { --bg: hsl(210, 25%, 8%); --fg: #c5c5c5; --sidebar-bg: #14191f; --sid=
+ebar-fg: #c8c9db; --sidebar-non-existant: #5c6773; --sidebar-active: #ffb45=
+4; --sidebar-spacer: #2d334f; --scrollbar: var(--sidebar-fg); --icons: #737=
+480; --icons-hover: #b7b9cc; --links: #0096cf; --inline-code-color: #ffb454=
+; --theme-popup-bg: #14191f; --theme-popup-border: #5c6773; --theme-hover: =
+#191f26; --quote-bg: hsl(226, 15%, 17%); --quote-border: hsl(226, 15%, 22%)=
+; --warning-border: #ff8e00; --table-border-color: hsl(210, 25%, 13%); --ta=
+ble-header-bg: hsl(210, 25%, 28%); --table-alternate-bg: hsl(210, 25%, 11%)=
+; --searchbar-border-color: #848484; --searchbar-bg: #424242; --searchbar-f=
+g: #fff; --searchbar-shadow-color: #d4c89f; --searchresults-header-fg: #666=
+; --searchresults-border-color: #888; --searchresults-li-bg: #252932; --sea=
+rch-mark-bg: #e3b171; --color-scheme: dark; }
+
+.coal { --bg: hsl(200, 7%, 8%); --fg: #98a3ad; --sidebar-bg: #292c2f; --sid=
+ebar-fg: #a1adb8; --sidebar-non-existant: #505254; --sidebar-active: #3473a=
+d; --sidebar-spacer: #393939; --scrollbar: var(--sidebar-fg); --icons: #434=
+84d; --icons-hover: #b3c0cc; --links: #2b79a2; --inline-code-color: #c5c8c6=
+; --theme-popup-bg: #141617; --theme-popup-border: #43484d; --theme-hover: =
+#1f2124; --quote-bg: hsl(234, 21%, 18%); --quote-border: hsl(234, 21%, 23%)=
+; --warning-border: #ff8e00; --table-border-color: hsl(200, 7%, 13%); --tab=
+le-header-bg: hsl(200, 7%, 28%); --table-alternate-bg: hsl(200, 7%, 11%); -=
+-searchbar-border-color: #aaa; --searchbar-bg: #b7b7b7; --searchbar-fg: #00=
+0; --searchbar-shadow-color: #aaa; --searchresults-header-fg: #666; --searc=
+hresults-border-color: #98a3ad; --searchresults-li-bg: #2b2b2f; --search-ma=
+rk-bg: #355c7d; --color-scheme: dark; }
+
+.light { --bg: hsl(0, 0%, 100%); --fg: hsl(0, 0%, 0%); --sidebar-bg: #fafaf=
+a; --sidebar-fg: hsl(0, 0%, 0%); --sidebar-non-existant: #aaaaaa; --sidebar=
+-active: #1f1fff; --sidebar-spacer: #f4f4f4; --scrollbar: #8F8F8F; --icons:=
+ #747474; --icons-hover: #000000; --links: #20609f; --inline-code-color: #3=
+01900; --theme-popup-bg: #fafafa; --theme-popup-border: #cccccc; --theme-ho=
+ver: #e6e6e6; --quote-bg: hsl(197, 37%, 96%); --quote-border: hsl(197, 37%,=
+ 91%); --warning-border: #ff8e00; --table-border-color: hsl(0, 0%, 95%); --=
+table-header-bg: hsl(0, 0%, 80%); --table-alternate-bg: hsl(0, 0%, 97%); --=
+searchbar-border-color: #aaa; --searchbar-bg: #fafafa; --searchbar-fg: #000=
+; --searchbar-shadow-color: #aaa; --searchresults-header-fg: #666; --search=
+results-border-color: #888; --searchresults-li-bg: #e4f2fe; --search-mark-b=
+g: #a2cff5; --color-scheme: light; }
+
+.navy { --bg: hsl(226, 23%, 11%); --fg: #bcbdd0; --sidebar-bg: #282d3f; --s=
+idebar-fg: #c8c9db; --sidebar-non-existant: #505274; --sidebar-active: #2b7=
+9a2; --sidebar-spacer: #2d334f; --scrollbar: var(--sidebar-fg); --icons: #7=
+37480; --icons-hover: #b7b9cc; --links: #2b79a2; --inline-code-color: #c5c8=
+c6; --theme-popup-bg: #161923; --theme-popup-border: #737480; --theme-hover=
+: #282e40; --quote-bg: hsl(226, 15%, 17%); --quote-border: hsl(226, 15%, 22=
+%); --warning-border: #ff8e00; --table-border-color: hsl(226, 23%, 16%); --=
+table-header-bg: hsl(226, 23%, 31%); --table-alternate-bg: hsl(226, 23%, 14=
+%); --searchbar-border-color: #aaa; --searchbar-bg: #aeaec6; --searchbar-fg=
+: #000; --searchbar-shadow-color: #aaa; --searchresults-header-fg: #5f5f71;=
+ --searchresults-border-color: #5c5c68; --searchresults-li-bg: #242430; --s=
+earch-mark-bg: #a2cff5; --color-scheme: dark; }
+
+.rust { --bg: hsl(60, 9%, 87%); --fg: #262625; --sidebar-bg: #3b2e2a; --sid=
+ebar-fg: #c8c9db; --sidebar-non-existant: #505254; --sidebar-active: #e69f6=
+7; --sidebar-spacer: #45373a; --scrollbar: var(--sidebar-fg); --icons: #737=
+480; --icons-hover: #262625; --links: #2b79a2; --inline-code-color: #6e6b5e=
+; --theme-popup-bg: #e1e1db; --theme-popup-border: #b38f6b; --theme-hover: =
+#99908a; --quote-bg: hsl(60, 5%, 75%); --quote-border: hsl(60, 5%, 70%); --=
+warning-border: #ff8e00; --table-border-color: hsl(60, 9%, 82%); --table-he=
+ader-bg: #b3a497; --table-alternate-bg: hsl(60, 9%, 84%); --searchbar-borde=
+r-color: #aaa; --searchbar-bg: #fafafa; --searchbar-fg: #000; --searchbar-s=
+hadow-color: #aaa; --searchresults-header-fg: #666; --searchresults-border-=
+color: #888; --searchresults-li-bg: #dec2a2; --search-mark-bg: #e69f67; --c=
+olor-scheme: light; }
+
+@media (prefers-color-scheme: dark) {
+  .light.no-js { --bg: hsl(200, 7%, 8%); --fg: #98a3ad; --sidebar-bg: #292c=
+2f; --sidebar-fg: #a1adb8; --sidebar-non-existant: #505254; --sidebar-activ=
+e: #3473ad; --sidebar-spacer: #393939; --scrollbar: var(--sidebar-fg); --ic=
+ons: #43484d; --icons-hover: #b3c0cc; --links: #2b79a2; --inline-code-color=
+: #c5c8c6; --theme-popup-bg: #141617; --theme-popup-border: #43484d; --them=
+e-hover: #1f2124; --quote-bg: hsl(234, 21%, 18%); --quote-border: hsl(234, =
+21%, 23%); --warning-border: #ff8e00; --table-border-color: hsl(200, 7%, 13=
+%); --table-header-bg: hsl(200, 7%, 28%); --table-alternate-bg: hsl(200, 7%=
+, 11%); --searchbar-border-color: #aaa; --searchbar-bg: #b7b7b7; --searchba=
+r-fg: #000; --searchbar-shadow-color: #aaa; --searchresults-header-fg: #666=
+; --searchresults-border-color: #98a3ad; --searchresults-li-bg: #2b2b2f; --=
+search-mark-bg: #355c7d; }
+}
+------MultipartBoundary--ih9l6io4MFNxyUrye3BoH9tMghoRvwoW4T0FYs0S7G----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://zcash.github.io/halo2/css/general.css
+
+@charset "utf-8";
+
+@import url("variables.css");
+
+:root { font-size: 62.5%; color-scheme: var(--color-scheme); }
+
+html { font-family: "Open Sans", sans-serif; color: var(--fg); background-c=
+olor: var(--bg); text-size-adjust: none; }
+
+body { margin: 0px; font-size: 1.6rem; overflow-x: hidden; }
+
+code { font-size: var(--code-font-size); font-family: var(--mono-font) !imp=
+ortant; direction: ltr !important; }
+
+main { overflow-wrap: break-word; }
+
+.table-wrapper { overflow-x: auto; }
+
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: unset; }
+
+.left { float: left; }
+
+.right { float: right; }
+
+.boring { opacity: 0.6; }
+
+.hide-boring .boring { display: none; }
+
+.hidden { display: none !important; }
+
+h2, h3 { margin-block-start: 2.5em; }
+
+h4, h5 { margin-block-start: 2em; }
+
+.header + .header h3, .header + .header h4, .header + .header h5 { margin-b=
+lock-start: 1em; }
+
+h1:target::before, h2:target::before, h3:target::before, h4:target::before,=
+ h5:target::before, h6:target::before { display: inline-block; content: "=
+=C2=BB"; margin-inline-start: -30px; width: 30px; }
+
+:target { scroll-margin-top: calc(var(--menu-bar-height) + 0.5em); }
+
+.page { outline: 0px; padding: 0 var(--page-padding); margin-block-start: c=
+alc(0px - var(--menu-bar-height)); }
+
+.page-wrapper { box-sizing: border-box; background-color: var(--bg); }
+
+.no-js .page-wrapper, .js:not(.sidebar-resizing) .page-wrapper { transition=
+: margin-left 0.3s ease 0s, transform 0.3s ease 0s; }
+
+[dir=3D"rtl"] .js:not(.sidebar-resizing) .page-wrapper { transition: margin=
+-right 0.3s ease 0s, transform 0.3s ease 0s; }
+
+.content { overflow-y: auto; padding: 0px 5px 50px; }
+
+.content main { margin-inline: auto; max-width: var(--content-max-width); }
+
+.content p { line-height: 1.45em; }
+
+.content ol { line-height: 1.45em; }
+
+.content ul { line-height: 1.45em; }
+
+.content a { text-decoration: none; }
+
+.content a:hover { text-decoration: underline; }
+
+.content img, .content video { max-width: 100%; }
+
+.content .header:link, .content .header:visited { color: var(--fg); }
+
+.content .header:link, .content .header:visited:hover { text-decoration: no=
+ne; }
+
+table { margin: 0px auto; border-collapse: collapse; }
+
+table td { padding: 3px 20px; border: 1px var(--table-border-color) solid; =
+}
+
+table thead { background: var(--table-header-bg); }
+
+table thead td { font-weight: 700; border: none; }
+
+table thead th { padding: 3px 20px; }
+
+table thead tr { border: 1px var(--table-header-bg) solid; }
+
+table tbody tr:nth-child(2n) { background: var(--table-alternate-bg); }
+
+blockquote { margin: 20px 0px; padding: 0px 20px; color: var(--fg); backgro=
+und-color: var(--quote-bg); border-block-start: .1em solid var(--quote-bord=
+er); border-block-end: .1em solid var(--quote-border); }
+
+.warning { margin: 20px; padding: 0px 20px; border-inline-start: 2px solid =
+var(--warning-border); }
+
+.warning::before { position: absolute; width: 3rem; height: 3rem; margin-in=
+line-start: calc(-21px - 1.5rem); content: "=E2=93=98"; text-align: center;=
+ background-color: var(--bg); color: var(--warning-border); font-weight: bo=
+ld; font-size: 2rem; }
+
+blockquote .warning::before { background-color: var(--quote-bg); }
+
+kbd { background-color: var(--table-border-color); border-radius: 4px; bord=
+er: solid 1px var(--theme-popup-border); box-shadow: inset 0 -1px 0 var(--t=
+heme-hover); display: inline-block; font-size: var(--code-font-size); font-=
+family: var(--mono-font); line-height: 10px; padding: 4px 5px; vertical-ali=
+gn: middle; }
+
+:not(.footnote-definition) + .footnote-definition, .footnote-definition + :=
+not(.footnote-definition) { margin-block-start: 2em; }
+
+.footnote-definition { font-size: 0.9em; margin: 0.5em 0px; }
+
+.footnote-definition p { display: inline; }
+
+.tooltiptext { position: absolute; visibility: hidden; color: rgb(255, 255,=
+ 255); background-color: rgb(51, 51, 51); transform: translateX(-50%); left=
+: -8px; top: -35px; font-size: 0.8em; text-align: center; border-radius: 6p=
+x; padding: 5px 8px; margin: 5px; z-index: 1000; }
+
+.tooltipped .tooltiptext { visibility: visible; }
+
+.chapter li.part-title { color: var(--sidebar-fg); margin: 5px 0px; font-we=
+ight: bold; }
+
+.result-no-output { font-style: italic; }
+------MultipartBoundary--ih9l6io4MFNxyUrye3BoH9tMghoRvwoW4T0FYs0S7G----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://zcash.github.io/halo2/css/chrome.css
+
+@charset "utf-8";
+
+@import url("variables.css");
+
+html { scrollbar-color: var(--scrollbar) var(--bg); }
+
+#searchresults a, .content a:link, a:visited, a > .hljs { color: var(--link=
+s); }
+
+#body-container { overflow-x: clip; }
+
+#menu-bar, #menu-bar-hover-placeholder { z-index: 101; margin: auto calc(0p=
+x - var(--page-padding)); }
+
+#menu-bar { position: relative; display: flex; flex-wrap: wrap; background-=
+color: var(--bg); border-block-end-color: var(--bg); border-block-end-width=
+: 1px; border-block-end-style: solid; }
+
+#menu-bar.sticky, .js #menu-bar-hover-placeholder:hover + #menu-bar, .js #m=
+enu-bar:hover, .js.sidebar-visible #menu-bar { position: sticky; top: 0px !=
+important; }
+
+#menu-bar-hover-placeholder { position: sticky; top: 0px; height: var(--men=
+u-bar-height); }
+
+#menu-bar.bordered { border-block-end-color: var(--table-border-color); }
+
+#menu-bar i, #menu-bar .icon-button { position: relative; padding: 0px 8px;=
+ z-index: 10; line-height: var(--menu-bar-height); cursor: pointer; transit=
+ion: color 0.5s ease 0s; }
+
+@media only screen and (max-width: 420px) {
+  #menu-bar i, #menu-bar .icon-button { padding: 0px 5px; }
+}
+
+.icon-button { border: none; background: none; padding: 0px; color: inherit=
+; }
+
+.icon-button i { margin: 0px; }
+
+.right-buttons { margin: 0px 15px; }
+
+.right-buttons a { text-decoration: none; }
+
+.left-buttons { display: flex; margin: 0px 5px; }
+
+.no-js .left-buttons button { display: none; }
+
+.menu-title { display: inline-block; font-weight: 200; font-size: 2.4rem; l=
+ine-height: var(--menu-bar-height); text-align: center; margin: 0px; flex: =
+1 1 0%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.js .menu-title { cursor: pointer; }
+
+.menu-bar, .menu-bar:visited, .nav-chapters, .nav-chapters:visited, .mobile=
+-nav-chapters, .mobile-nav-chapters:visited, .menu-bar .icon-button, .menu-=
+bar a i { color: var(--icons); }
+
+.menu-bar i:hover, .menu-bar .icon-button:hover, .nav-chapters:hover, .mobi=
+le-nav-chapters i:hover { color: var(--icons-hover); }
+
+.nav-chapters { font-size: 2.5em; text-align: center; text-decoration: none=
+; position: fixed; top: 0px; bottom: 0px; margin: 0px; max-width: 150px; mi=
+n-width: 90px; display: flex; place-content: center; flex-direction: column=
+; transition: color 0.5s ease 0s, background-color 0.5s ease 0s; }
+
+.nav-chapters:hover { text-decoration: none; background-color: var(--theme-=
+hover); transition: background-color 0.15s ease 0s, color 0.15s ease 0s; }
+
+.nav-wrapper { margin-block-start: 50px; display: none; }
+
+.mobile-nav-chapters { font-size: 2.5em; text-align: center; text-decoratio=
+n: none; width: 90px; border-radius: 5px; background-color: var(--sidebar-b=
+g); }
+
+.previous { float: left; }
+
+[dir=3D"rtl"] .previous { float: right; }
+
+.next { float: right; right: var(--page-padding); }
+
+[dir=3D"rtl"] .next { float: left; right: unset; left: var(--page-padding);=
+ }
+
+[dir=3D"rtl"] .previous i.fa-angle-left::before { content: "=EF=84=85"; }
+
+[dir=3D"rtl"] .next i.fa-angle-right::before { content: "=EF=84=84"; }
+
+@media only screen and (max-width: 1080px) {
+  .nav-wide-wrapper { display: none; }
+  .nav-wrapper { display: block; }
+}
+
+@media only screen and (max-width: 1380px) {
+  #sidebar-toggle-anchor:checked ~ .page-wrapper .nav-wide-wrapper { displa=
+y: none; }
+  #sidebar-toggle-anchor:checked ~ .page-wrapper .nav-wrapper { display: bl=
+ock; }
+}
+
+:not(pre) > .hljs { display: inline; padding: 0.1em 0.3em; border-radius: 3=
+px; }
+
+:not(pre):not(a) > .hljs { color: var(--inline-code-color); overflow-x: ini=
+tial; }
+
+a:hover > .hljs { text-decoration: underline; }
+
+pre { position: relative; }
+
+pre > .buttons { position: absolute; z-index: 100; right: 0px; top: 2px; ma=
+rgin: 0px; padding: 2px 0px; color: var(--sidebar-fg); cursor: pointer; vis=
+ibility: hidden; opacity: 0; transition: visibility 0.1s linear 0s, opacity=
+ 0.1s linear 0s; }
+
+pre:hover > .buttons { visibility: visible; opacity: 1; }
+
+pre > .buttons :hover { color: var(--sidebar-active); border-color: var(--i=
+cons-hover); background-color: var(--theme-hover); }
+
+pre > .buttons i { margin-inline-start: 8px; }
+
+pre > .buttons button { cursor: inherit; margin: 0px 5px; padding: 3px 5px;=
+ font-size: 14px; border-style: solid; border-width: 1px; border-radius: 4p=
+x; border-color: var(--icons); background-color: var(--theme-popup-bg); tra=
+nsition: color 100ms ease 0s, border-color, background-color; color: var(--=
+icons); }
+
+@media (pointer: coarse) {
+  pre > .buttons button { padding: 0.3rem 1rem; }
+  .sidebar-resize-indicator { display: none; }
+}
+
+pre > code { display: block; padding: 1rem; }
+
+.hljs.ace_editor { padding: 0rem; }
+
+pre > .result { margin-block-start: 10px; }
+
+#searchresults a { text-decoration: none; }
+
+mark { border-radius: 2px; padding-block: 0px 1px; padding-inline: 3px; mar=
+gin-block: 0px -1px; margin-inline: -3px; background-color: var(--search-ma=
+rk-bg); transition: background-color 300ms linear 0s; cursor: pointer; }
+
+mark.fade-out { background-color: rgba(0, 0, 0, 0) !important; cursor: auto=
+; }
+
+.searchbar-outer { margin-inline: auto; max-width: var(--content-max-width)=
+; }
+
+#searchbar { width: 100%; margin-block: 5px 0px; margin-inline: auto; paddi=
+ng: 10px 16px; transition: box-shadow 300ms ease-in-out 0s; border: 1px sol=
+id var(--searchbar-border-color); border-radius: 3px; background-color: var=
+(--searchbar-bg); color: var(--searchbar-fg); }
+
+#searchbar:focus, #searchbar.active { box-shadow: 0 0 3px var(--searchbar-s=
+hadow-color); }
+
+.searchresults-header { font-weight: bold; font-size: 1em; padding-block: 1=
+8px 0px; padding-inline: 5px 0px; color: var(--searchresults-header-fg); }
+
+.searchresults-outer { margin-inline: auto; max-width: var(--content-max-wi=
+dth); border-block-end: 1px dashed var(--searchresults-border-color); }
+
+ul#searchresults { list-style: none; padding-inline-start: 20px; }
+
+ul#searchresults li { margin: 10px 0px; padding: 2px; border-radius: 2px; }
+
+ul#searchresults li.focus { background-color: var(--searchresults-li-bg); }
+
+ul#searchresults span.teaser { display: block; clear: both; margin-block: 5=
+px 0px; margin-inline: 20px 0px; font-size: 0.8em; }
+
+ul#searchresults span.teaser em { font-weight: bold; font-style: normal; }
+
+.sidebar { position: fixed; left: 0px; top: 0px; bottom: 0px; width: var(--=
+sidebar-width); font-size: 0.875em; box-sizing: border-box; overscroll-beha=
+vior-y: contain; background-color: var(--sidebar-bg); color: var(--sidebar-=
+fg); }
+
+[dir=3D"rtl"] .sidebar { left: unset; right: 0px; }
+
+.sidebar-resizing { user-select: none; }
+
+.no-js .sidebar, .js:not(.sidebar-resizing) .sidebar { transition: transfor=
+m 0.3s ease 0s; }
+
+.sidebar code { line-height: 2em; }
+
+.sidebar .sidebar-scrollbox { overflow-y: auto; position: absolute; inset: =
+0px; padding: 10px; }
+
+.sidebar .sidebar-resize-handle { position: absolute; cursor: col-resize; w=
+idth: 0px; right: calc(var(--sidebar-resize-indicator-width) * -1); top: 0p=
+x; bottom: 0px; display: flex; align-items: center; }
+
+.sidebar-resize-handle .sidebar-resize-indicator { width: 100%; height: 12p=
+x; background-color: var(--icons); margin-inline-start: var(--sidebar-resiz=
+e-indicator-space); }
+
+[dir=3D"rtl"] .sidebar .sidebar-resize-handle { left: calc(var(--sidebar-re=
+size-indicator-width) * -1); right: unset; }
+
+.js .sidebar .sidebar-resize-handle { cursor: col-resize; width: calc(var(-=
+-sidebar-resize-indicator-width) - var(--sidebar-resize-indicator-space)); =
+}
+
+#sidebar-toggle-anchor:not(:checked) ~ .sidebar { transform: translateX(cal=
+c(0px - var(--sidebar-width) - var(--sidebar-resize-indicator-width))); z-i=
+ndex: -1; }
+
+[dir=3D"rtl"] #sidebar-toggle-anchor:not(:checked) ~ .sidebar { transform: =
+translateX(calc(var(--sidebar-width) + var(--sidebar-resize-indicator-width=
+))); }
+
+.sidebar::-webkit-scrollbar { background: var(--sidebar-bg); }
+
+.sidebar::-webkit-scrollbar-thumb { background: var(--scrollbar); }
+
+#sidebar-toggle-anchor:checked ~ .page-wrapper { transform: translateX(calc=
+(var(--sidebar-width) + var(--sidebar-resize-indicator-width))); }
+
+[dir=3D"rtl"] #sidebar-toggle-anchor:checked ~ .page-wrapper { transform: t=
+ranslateX(calc(0px - var(--sidebar-width) - var(--sidebar-resize-indicator-=
+width))); }
+
+@media only screen and (min-width: 620px) {
+  #sidebar-toggle-anchor:checked ~ .page-wrapper { transform: none; margin-=
+inline-start: calc(var(--sidebar-width) + var(--sidebar-resize-indicator-wi=
+dth)); }
+  [dir=3D"rtl"] #sidebar-toggle-anchor:checked ~ .page-wrapper { transform:=
+ none; }
+}
+
+.chapter { list-style: outside none none; padding-inline-start: 0px; line-h=
+eight: 2.2em; }
+
+.chapter ol { width: 100%; }
+
+.chapter li { display: flex; color: var(--sidebar-non-existant); }
+
+.chapter li a { display: block; padding: 0px; text-decoration: none; color:=
+ var(--sidebar-fg); }
+
+.chapter li a:hover { color: var(--sidebar-active); }
+
+.chapter li a.active { color: var(--sidebar-active); }
+
+.chapter li > a.toggle { cursor: pointer; display: block; margin-inline-sta=
+rt: auto; padding: 0px 10px; user-select: none; opacity: 0.68; }
+
+.chapter li > a.toggle div { transition: transform 0.5s ease 0s; }
+
+.chapter li:not(.expanded) + li > ol { display: none; }
+
+.chapter li.chapter-item { line-height: 1.5em; margin-block-start: 0.6em; }
+
+.chapter li.expanded > a.toggle div { transform: rotate(90deg); }
+
+.spacer { width: 100%; height: 3px; margin: 5px 0px; }
+
+.chapter .spacer { background-color: var(--sidebar-spacer); }
+
+@media (-moz-touch-enabled: 1), (pointer: coarse) {
+  .chapter li a { padding: 5px 0px; }
+  .spacer { margin: 10px 0px; }
+}
+
+.section { list-style: outside none none; padding-inline-start: 20px; line-=
+height: 1.9em; }
+
+.theme-popup { position: absolute; left: 10px; top: var(--menu-bar-height);=
+ z-index: 1000; border-radius: 4px; font-size: 0.7em; color: var(--fg); bac=
+kground: var(--theme-popup-bg); border: 1px solid var(--theme-popup-border)=
+; margin: 0px; padding: 0px; list-style: none; display: none; overflow: hid=
+den; }
+
+[dir=3D"rtl"] .theme-popup { left: unset; right: 10px; }
+
+.theme-popup .default { color: var(--icons); }
+
+.theme-popup .theme { width: 100%; border: 0px; margin: 0px; padding: 2px 2=
+0px; line-height: 25px; white-space: nowrap; text-align: start; cursor: poi=
+nter; color: inherit; background: inherit; font-size: inherit; }
+
+.theme-popup .theme:hover { background-color: var(--theme-hover); }
+
+.theme-selected::before { display: inline-block; content: "=E2=9C=93"; marg=
+in-inline-start: -14px; width: 14px; }
+------MultipartBoundary--ih9l6io4MFNxyUrye3BoH9tMghoRvwoW4T0FYs0S7G----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://zcash.github.io/halo2/css/print.css
+
+@charset "utf-8";
+
+#sidebar, #menu-bar, .nav-chapters, .mobile-nav-chapters { display: none; }
+
+#page-wrapper.page-wrapper { margin-inline-start: 0px; overflow-y: initial;=
+ transform: none !important; }
+
+#content { max-width: none; margin: 0px; padding: 0px; }
+
+.page { overflow-y: initial; }
+
+code { direction: ltr !important; }
+
+pre > .buttons { z-index: 2; }
+
+a, a:visited, a:active, a:hover { color: rgb(65, 131, 196); text-decoration=
+: none; }
+
+h1, h2, h3, h4, h5, h6 { break-inside: avoid; break-after: avoid; }
+
+pre, code { break-inside: avoid; white-space: pre-wrap; }
+
+.fa { display: none !important; }
+------MultipartBoundary--ih9l6io4MFNxyUrye3BoH9tMghoRvwoW4T0FYs0S7G----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://zcash.github.io/halo2/FontAwesome/css/font-awesome.css
+
+@charset "utf-8";
+
+@font-face { font-family: FontAwesome; src: url("../fonts/fontawesome-webfo=
+nt.woff2?v=3D4.7.0") format("woff2"), url("../fonts/fontawesome-webfont.wof=
+f?v=3D4.7.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=3D4.7=
+.0") format("truetype"); font-weight: normal; font-style: normal; }
+
+.fa { display: inline-block; font-style: normal; font-variant: normal; font=
+-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; f=
+ont-variation-settings: normal; font-weight: normal; font-stretch: normal; =
+line-height: 1; font-family: FontAwesome; font-size: inherit; text-renderin=
+g: auto; -webkit-font-smoothing: antialiased; }
+
+.fa-lg { font-size: 1.33333em; line-height: 0.75em; vertical-align: -15%; }
+
+.fa-2x { font-size: 2em; }
+
+.fa-3x { font-size: 3em; }
+
+.fa-4x { font-size: 4em; }
+
+.fa-5x { font-size: 5em; }
+
+.fa-fw { width: 1.28571em; text-align: center; }
+
+.fa-ul { padding-left: 0px; margin-left: 2.14286em; list-style-type: none; =
+}
+
+.fa-ul > li { position: relative; }
+
+.fa-li { position: absolute; left: -2.14286em; width: 2.14286em; top: 0.142=
+857em; text-align: center; }
+
+.fa-li.fa-lg { left: -1.85714em; }
+
+.fa-border { padding: 0.2em 0.25em 0.15em; border: 0.08em solid rgb(238, 23=
+8, 238); border-radius: 0.1em; }
+
+.fa-pull-left { float: left; }
+
+.fa-pull-right { float: right; }
+
+.fa.fa-pull-left { margin-right: 0.3em; }
+
+.fa.fa-pull-right { margin-left: 0.3em; }
+
+.pull-right { float: right; }
+
+.pull-left { float: left; }
+
+.fa.pull-left { margin-right: 0.3em; }
+
+.fa.pull-right { margin-left: 0.3em; }
+
+.fa-spin { animation: 2s linear 0s infinite normal none running fa-spin; }
+
+.fa-pulse { animation: 1s steps(8) 0s infinite normal none running fa-spin;=
+ }
+
+@-webkit-keyframes fa-spin {=20
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
+}
+
+@keyframes fa-spin {=20
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
+}
+
+.fa-rotate-90 { transform: rotate(90deg); }
+
+.fa-rotate-180 { transform: rotate(180deg); }
+
+.fa-rotate-270 { transform: rotate(270deg); }
+
+.fa-flip-horizontal { transform: scale(-1, 1); }
+
+.fa-flip-vertical { transform: scale(1, -1); }
+
+:root .fa-rotate-90, :root .fa-rotate-180, :root .fa-rotate-270, :root .fa-=
+flip-horizontal, :root .fa-flip-vertical { filter: none; }
+
+.fa-stack { position: relative; display: inline-block; width: 2em; height: =
+2em; line-height: 2em; vertical-align: middle; }
+
+.fa-stack-1x, .fa-stack-2x { position: absolute; left: 0px; width: 100%; te=
+xt-align: center; }
+
+.fa-stack-1x { line-height: inherit; }
+
+.fa-stack-2x { font-size: 2em; }
+
+.fa-inverse { color: rgb(255, 255, 255); }
+
+.fa-glass::before { content: "=EF=80=80"; }
+
+.fa-music::before { content: "=EF=80=81"; }
+
+.fa-search::before { content: "=EF=80=82"; }
+
+.fa-envelope-o::before { content: "=EF=80=83"; }
+
+.fa-heart::before { content: "=EF=80=84"; }
+
+.fa-star::before { content: "=EF=80=85"; }
+
+.fa-star-o::before { content: "=EF=80=86"; }
+
+.fa-user::before { content: "=EF=80=87"; }
+
+.fa-film::before { content: "=EF=80=88"; }
+
+.fa-th-large::before { content: "=EF=80=89"; }
+
+.fa-th::before { content: "=EF=80=8A"; }
+
+.fa-th-list::before { content: "=EF=80=8B"; }
+
+.fa-check::before { content: "=EF=80=8C"; }
+
+.fa-remove::before, .fa-close::before, .fa-times::before { content: "=EF=80=
+=8D"; }
+
+.fa-search-plus::before { content: "=EF=80=8E"; }
+
+.fa-search-minus::before { content: "=EF=80=90"; }
+
+.fa-power-off::before { content: "=EF=80=91"; }
+
+.fa-signal::before { content: "=EF=80=92"; }
+
+.fa-gear::before, .fa-cog::before { content: "=EF=80=93"; }
+
+.fa-trash-o::before { content: "=EF=80=94"; }
+
+.fa-home::before { content: "=EF=80=95"; }
+
+.fa-file-o::before { content: "=EF=80=96"; }
+
+.fa-clock-o::before { content: "=EF=80=97"; }
+
+.fa-road::before { content: "=EF=80=98"; }
+
+.fa-download::before { content: "=EF=80=99"; }
+
+.fa-arrow-circle-o-down::before { content: "=EF=80=9A"; }
+
+.fa-arrow-circle-o-up::before { content: "=EF=80=9B"; }
+
+.fa-inbox::before { content: "=EF=80=9C"; }
+
+.fa-play-circle-o::before { content: "=EF=80=9D"; }
+
+.fa-rotate-right::before, .fa-repeat::before { content: "=EF=80=9E"; }
+
+.fa-refresh::before { content: "=EF=80=A1"; }
+
+.fa-list-alt::before { content: "=EF=80=A2"; }
+
+.fa-lock::before { content: "=EF=80=A3"; }
+
+.fa-flag::before { content: "=EF=80=A4"; }
+
+.fa-headphones::before { content: "=EF=80=A5"; }
+
+.fa-volume-off::before { content: "=EF=80=A6"; }
+
+.fa-volume-down::before { content: "=EF=80=A7"; }
+
+.fa-volume-up::before { content: "=EF=80=A8"; }
+
+.fa-qrcode::before { content: "=EF=80=A9"; }
+
+.fa-barcode::before { content: "=EF=80=AA"; }
+
+.fa-tag::before { content: "=EF=80=AB"; }
+
+.fa-tags::before { content: "=EF=80=AC"; }
+
+.fa-book::before { content: "=EF=80=AD"; }
+
+.fa-bookmark::before { content: "=EF=80=AE"; }
+
+.fa-print::before { content: "=EF=80=AF"; }
+
+.fa-camera::before { content: "=EF=80=B0"; }
+
+.fa-font::before { content: "=EF=80=B1"; }
+
+.fa-bold::before { content: "=EF=80=B2"; }
+
+.fa-italic::before { content: "=EF=80=B3"; }
+
+.fa-text-height::before { content: "=EF=80=B4"; }
+
+.fa-text-width::before { content: "=EF=80=B5"; }
+
+.fa-align-left::before { content: "=EF=80=B6"; }
+
+.fa-align-center::before { content: "=EF=80=B7"; }
+
+.fa-align-right::before { content: "=EF=80=B8"; }
+
+.fa-align-justify::before { content: "=EF=80=B9"; }
+
+.fa-list::before { content: "=EF=80=BA"; }
+
+.fa-dedent::before, .fa-outdent::before { content: "=EF=80=BB"; }
+
+.fa-indent::before { content: "=EF=80=BC"; }
+
+.fa-video-camera::before { content: "=EF=80=BD"; }
+
+.fa-photo::before, .fa-image::before, .fa-picture-o::before { content: "=EF=
+=80=BE"; }
+
+.fa-pencil::before { content: "=EF=81=80"; }
+
+.fa-map-marker::before { content: "=EF=81=81"; }
+
+.fa-adjust::before { content: "=EF=81=82"; }
+
+.fa-tint::before { content: "=EF=81=83"; }
+
+.fa-edit::before, .fa-pencil-square-o::before { content: "=EF=81=84"; }
+
+.fa-share-square-o::before { content: "=EF=81=85"; }
+
+.fa-check-square-o::before { content: "=EF=81=86"; }
+
+.fa-arrows::before { content: "=EF=81=87"; }
+
+.fa-step-backward::before { content: "=EF=81=88"; }
+
+.fa-fast-backward::before { content: "=EF=81=89"; }
+
+.fa-backward::before { content: "=EF=81=8A"; }
+
+.fa-play::before { content: "=EF=81=8B"; }
+
+.fa-pause::before { content: "=EF=81=8C"; }
+
+.fa-stop::before { content: "=EF=81=8D"; }
+
+.fa-forward::before { content: "=EF=81=8E"; }
+
+.fa-fast-forward::before { content: "=EF=81=90"; }
+
+.fa-step-forward::before { content: "=EF=81=91"; }
+
+.fa-eject::before { content: "=EF=81=92"; }
+
+.fa-chevron-left::before { content: "=EF=81=93"; }
+
+.fa-chevron-right::before { content: "=EF=81=94"; }
+
+.fa-plus-circle::before { content: "=EF=81=95"; }
+
+.fa-minus-circle::before { content: "=EF=81=96"; }
+
+.fa-times-circle::before { content: "=EF=81=97"; }
+
+.fa-check-circle::before { content: "=EF=81=98"; }
+
+.fa-question-circle::before { content: "=EF=81=99"; }
+
+.fa-info-circle::before { content: "=EF=81=9A"; }
+
+.fa-crosshairs::before { content: "=EF=81=9B"; }
+
+.fa-times-circle-o::before { content: "=EF=81=9C"; }
+
+.fa-check-circle-o::before { content: "=EF=81=9D"; }
+
+.fa-ban::before { content: "=EF=81=9E"; }
+
+.fa-arrow-left::before { content: "=EF=81=A0"; }
+
+.fa-arrow-right::before { content: "=EF=81=A1"; }
+
+.fa-arrow-up::before { content: "=EF=81=A2"; }
+
+.fa-arrow-down::before { content: "=EF=81=A3"; }
+
+.fa-mail-forward::before, .fa-share::before { content: "=EF=81=A4"; }
+
+.fa-expand::before { content: "=EF=81=A5"; }
+
+.fa-compress::before { content: "=EF=81=A6"; }
+
+.fa-plus::before { content: "=EF=81=A7"; }
+
+.fa-minus::before { content: "=EF=81=A8"; }
+
+.fa-asterisk::before { content: "=EF=81=A9"; }
+
+.fa-exclamation-circle::before { content: "=EF=81=AA"; }
+
+.fa-gift::before { content: "=EF=81=AB"; }
+
+.fa-leaf::before { content: "=EF=81=AC"; }
+
+.fa-fire::before { content: "=EF=81=AD"; }
+
+.fa-eye::before { content: "=EF=81=AE"; }
+
+.fa-eye-slash::before { content: "=EF=81=B0"; }
+
+.fa-warning::before, .fa-exclamation-triangle::before { content: "=EF=81=B1=
+"; }
+
+.fa-plane::before { content: "=EF=81=B2"; }
+
+.fa-calendar::before { content: "=EF=81=B3"; }
+
+.fa-random::before { content: "=EF=81=B4"; }
+
+.fa-comment::before { content: "=EF=81=B5"; }
+
+.fa-magnet::before { content: "=EF=81=B6"; }
+
+.fa-chevron-up::before { content: "=EF=81=B7"; }
+
+.fa-chevron-down::before { content: "=EF=81=B8"; }
+
+.fa-retweet::before { content: "=EF=81=B9"; }
+
+.fa-shopping-cart::before { content: "=EF=81=BA"; }
+
+.fa-folder::before { content: "=EF=81=BB"; }
+
+.fa-folder-open::before { content: "=EF=81=BC"; }
+
+.fa-arrows-v::before { content: "=EF=81=BD"; }
+
+.fa-arrows-h::before { content: "=EF=81=BE"; }
+
+.fa-bar-chart-o::before, .fa-bar-chart::before { content: "=EF=82=80"; }
+
+.fa-twitter-square::before { content: "=EF=82=81"; }
+
+.fa-facebook-square::before { content: "=EF=82=82"; }
+
+.fa-camera-retro::before { content: "=EF=82=83"; }
+
+.fa-key::before { content: "=EF=82=84"; }
+
+.fa-gears::before, .fa-cogs::before { content: "=EF=82=85"; }
+
+.fa-comments::before { content: "=EF=82=86"; }
+
+.fa-thumbs-o-up::before { content: "=EF=82=87"; }
+
+.fa-thumbs-o-down::before { content: "=EF=82=88"; }
+
+.fa-star-half::before { content: "=EF=82=89"; }
+
+.fa-heart-o::before { content: "=EF=82=8A"; }
+
+.fa-sign-out::before { content: "=EF=82=8B"; }
+
+.fa-linkedin-square::before { content: "=EF=82=8C"; }
+
+.fa-thumb-tack::before { content: "=EF=82=8D"; }
+
+.fa-external-link::before { content: "=EF=82=8E"; }
+
+.fa-sign-in::before { content: "=EF=82=90"; }
+
+.fa-trophy::before { content: "=EF=82=91"; }
+
+.fa-github-square::before { content: "=EF=82=92"; }
+
+.fa-upload::before { content: "=EF=82=93"; }
+
+.fa-lemon-o::before { content: "=EF=82=94"; }
+
+.fa-phone::before { content: "=EF=82=95"; }
+
+.fa-square-o::before { content: "=EF=82=96"; }
+
+.fa-bookmark-o::before { content: "=EF=82=97"; }
+
+.fa-phone-square::before { content: "=EF=82=98"; }
+
+.fa-twitter::before { content: "=EF=82=99"; }
+
+.fa-facebook-f::before, .fa-facebook::before { content: "=EF=82=9A"; }
+
+.fa-github::before { content: "=EF=82=9B"; }
+
+.fa-unlock::before { content: "=EF=82=9C"; }
+
+.fa-credit-card::before { content: "=EF=82=9D"; }
+
+.fa-feed::before, .fa-rss::before { content: "=EF=82=9E"; }
+
+.fa-hdd-o::before { content: "=EF=82=A0"; }
+
+.fa-bullhorn::before { content: "=EF=82=A1"; }
+
+.fa-bell::before { content: "=EF=83=B3"; }
+
+.fa-certificate::before { content: "=EF=82=A3"; }
+
+.fa-hand-o-right::before { content: "=EF=82=A4"; }
+
+.fa-hand-o-left::before { content: "=EF=82=A5"; }
+
+.fa-hand-o-up::before { content: "=EF=82=A6"; }
+
+.fa-hand-o-down::before { content: "=EF=82=A7"; }
+
+.fa-arrow-circle-left::before { content: "=EF=82=A8"; }
+
+.fa-arrow-circle-right::before { content: "=EF=82=A9"; }
+
+.fa-arrow-circle-up::before { content: "=EF=82=AA"; }
+
+.fa-arrow-circle-down::before { content: "=EF=82=AB"; }
+
+.fa-globe::before { content: "=EF=82=AC"; }
+
+.fa-wrench::before { content: "=EF=82=AD"; }
+
+.fa-tasks::before { content: "=EF=82=AE"; }
+
+.fa-filter::before { content: "=EF=82=B0"; }
+
+.fa-briefcase::before { content: "=EF=82=B1"; }
+
+.fa-arrows-alt::before { content: "=EF=82=B2"; }
+
+.fa-group::before, .fa-users::before { content: "=EF=83=80"; }
+
+.fa-chain::before, .fa-link::before { content: "=EF=83=81"; }
+
+.fa-cloud::before { content: "=EF=83=82"; }
+
+.fa-flask::before { content: "=EF=83=83"; }
+
+.fa-cut::before, .fa-scissors::before { content: "=EF=83=84"; }
+
+.fa-copy::before, .fa-files-o::before { content: "=EF=83=85"; }
+
+.fa-paperclip::before { content: "=EF=83=86"; }
+
+.fa-save::before, .fa-floppy-o::before { content: "=EF=83=87"; }
+
+.fa-square::before { content: "=EF=83=88"; }
+
+.fa-navicon::before, .fa-reorder::before, .fa-bars::before { content: "=EF=
+=83=89"; }
+
+.fa-list-ul::before { content: "=EF=83=8A"; }
+
+.fa-list-ol::before { content: "=EF=83=8B"; }
+
+.fa-strikethrough::before { content: "=EF=83=8C"; }
+
+.fa-underline::before { content: "=EF=83=8D"; }
+
+.fa-table::before { content: "=EF=83=8E"; }
+
+.fa-magic::before { content: "=EF=83=90"; }
+
+.fa-truck::before { content: "=EF=83=91"; }
+
+.fa-pinterest::before { content: "=EF=83=92"; }
+
+.fa-pinterest-square::before { content: "=EF=83=93"; }
+
+.fa-google-plus-square::before { content: "=EF=83=94"; }
+
+.fa-google-plus::before { content: "=EF=83=95"; }
+
+.fa-money::before { content: "=EF=83=96"; }
+
+.fa-caret-down::before { content: "=EF=83=97"; }
+
+.fa-caret-up::before { content: "=EF=83=98"; }
+
+.fa-caret-left::before { content: "=EF=83=99"; }
+
+.fa-caret-right::before { content: "=EF=83=9A"; }
+
+.fa-columns::before { content: "=EF=83=9B"; }
+
+.fa-unsorted::before, .fa-sort::before { content: "=EF=83=9C"; }
+
+.fa-sort-down::before, .fa-sort-desc::before { content: "=EF=83=9D"; }
+
+.fa-sort-up::before, .fa-sort-asc::before { content: "=EF=83=9E"; }
+
+.fa-envelope::before { content: "=EF=83=A0"; }
+
+.fa-linkedin::before { content: "=EF=83=A1"; }
+
+.fa-rotate-left::before, .fa-undo::before { content: "=EF=83=A2"; }
+
+.fa-legal::before, .fa-gavel::before { content: "=EF=83=A3"; }
+
+.fa-dashboard::before, .fa-tachometer::before { content: "=EF=83=A4"; }
+
+.fa-comment-o::before { content: "=EF=83=A5"; }
+
+.fa-comments-o::before { content: "=EF=83=A6"; }
+
+.fa-flash::before, .fa-bolt::before { content: "=EF=83=A7"; }
+
+.fa-sitemap::before { content: "=EF=83=A8"; }
+
+.fa-umbrella::before { content: "=EF=83=A9"; }
+
+.fa-paste::before, .fa-clipboard::before { content: "=EF=83=AA"; }
+
+.fa-lightbulb-o::before { content: "=EF=83=AB"; }
+
+.fa-exchange::before { content: "=EF=83=AC"; }
+
+.fa-cloud-download::before { content: "=EF=83=AD"; }
+
+.fa-cloud-upload::before { content: "=EF=83=AE"; }
+
+.fa-user-md::before { content: "=EF=83=B0"; }
+
+.fa-stethoscope::before { content: "=EF=83=B1"; }
+
+.fa-suitcase::before { content: "=EF=83=B2"; }
+
+.fa-bell-o::before { content: "=EF=82=A2"; }
+
+.fa-coffee::before { content: "=EF=83=B4"; }
+
+.fa-cutlery::before { content: "=EF=83=B5"; }
+
+.fa-file-text-o::before { content: "=EF=83=B6"; }
+
+.fa-building-o::before { content: "=EF=83=B7"; }
+
+.fa-hospital-o::before { content: "=EF=83=B8"; }
+
+.fa-ambulance::before { content: "=EF=83=B9"; }
+
+.fa-medkit::before { content: "=EF=83=BA"; }
+
+.fa-fighter-jet::before { content: "=EF=83=BB"; }
+
+.fa-beer::before { content: "=EF=83=BC"; }
+
+.fa-h-square::before { content: "=EF=83=BD"; }
+
+.fa-plus-square::before { content: "=EF=83=BE"; }
+
+.fa-angle-double-left::before { content: "=EF=84=80"; }
+
+.fa-angle-double-right::before { content: "=EF=84=81"; }
+
+.fa-angle-double-up::before { content: "=EF=84=82"; }
+
+.fa-angle-double-down::before { content: "=EF=84=83"; }
+
+.fa-angle-left::before { content: "=EF=84=84"; }
+
+.fa-angle-right::before { content: "=EF=84=85"; }
+
+.fa-angle-up::before { content: "=EF=84=86"; }
+
+.fa-angle-down::before { content: "=EF=84=87"; }
+
+.fa-desktop::before { content: "=EF=84=88"; }
+
+.fa-laptop::before { content: "=EF=84=89"; }
+
+.fa-tablet::before { content: "=EF=84=8A"; }
+
+.fa-mobile-phone::before, .fa-mobile::before { content: "=EF=84=8B"; }
+
+.fa-circle-o::before { content: "=EF=84=8C"; }
+
+.fa-quote-left::before { content: "=EF=84=8D"; }
+
+.fa-quote-right::before { content: "=EF=84=8E"; }
+
+.fa-spinner::before { content: "=EF=84=90"; }
+
+.fa-circle::before { content: "=EF=84=91"; }
+
+.fa-mail-reply::before, .fa-reply::before { content: "=EF=84=92"; }
+
+.fa-github-alt::before { content: "=EF=84=93"; }
+
+.fa-folder-o::before { content: "=EF=84=94"; }
+
+.fa-folder-open-o::before { content: "=EF=84=95"; }
+
+.fa-smile-o::before { content: "=EF=84=98"; }
+
+.fa-frown-o::before { content: "=EF=84=99"; }
+
+.fa-meh-o::before { content: "=EF=84=9A"; }
+
+.fa-gamepad::before { content: "=EF=84=9B"; }
+
+.fa-keyboard-o::before { content: "=EF=84=9C"; }
+
+.fa-flag-o::before { content: "=EF=84=9D"; }
+
+.fa-flag-checkered::before { content: "=EF=84=9E"; }
+
+.fa-terminal::before { content: "=EF=84=A0"; }
+
+.fa-code::before { content: "=EF=84=A1"; }
+
+.fa-mail-reply-all::before, .fa-reply-all::before { content: "=EF=84=A2"; }
+
+.fa-star-half-empty::before, .fa-star-half-full::before, .fa-star-half-o::b=
+efore { content: "=EF=84=A3"; }
+
+.fa-location-arrow::before { content: "=EF=84=A4"; }
+
+.fa-crop::before { content: "=EF=84=A5"; }
+
+.fa-code-fork::before { content: "=EF=84=A6"; }
+
+.fa-unlink::before, .fa-chain-broken::before { content: "=EF=84=A7"; }
+
+.fa-question::before { content: "=EF=84=A8"; }
+
+.fa-info::before { content: "=EF=84=A9"; }
+
+.fa-exclamation::before { content: "=EF=84=AA"; }
+
+.fa-superscript::before { content: "=EF=84=AB"; }
+
+.fa-subscript::before { content: "=EF=84=AC"; }
+
+.fa-eraser::before { content: "=EF=84=AD"; }
+
+.fa-puzzle-piece::before { content: "=EF=84=AE"; }
+
+.fa-microphone::before { content: "=EF=84=B0"; }
+
+.fa-microphone-slash::before { content: "=EF=84=B1"; }
+
+.fa-shield::before { content: "=EF=84=B2"; }
+
+.fa-calendar-o::before { content: "=EF=84=B3"; }
+
+.fa-fire-extinguisher::before { content: "=EF=84=B4"; }
+
+.fa-rocket::before { content: "=EF=84=B5"; }
+
+.fa-maxcdn::before { content: "=EF=84=B6"; }
+
+.fa-chevron-circle-left::before { content: "=EF=84=B7"; }
+
+.fa-chevron-circle-right::before { content: "=EF=84=B8"; }
+
+.fa-chevron-circle-up::before { content: "=EF=84=B9"; }
+
+.fa-chevron-circle-down::before { content: "=EF=84=BA"; }
+
+.fa-html5::before { content: "=EF=84=BB"; }
+
+.fa-css3::before { content: "=EF=84=BC"; }
+
+.fa-anchor::before { content: "=EF=84=BD"; }
+
+.fa-unlock-alt::before { content: "=EF=84=BE"; }
+
+.fa-bullseye::before { content: "=EF=85=80"; }
+
+.fa-ellipsis-h::before { content: "=EF=85=81"; }
+
+.fa-ellipsis-v::before { content: "=EF=85=82"; }
+
+.fa-rss-square::before { content: "=EF=85=83"; }
+
+.fa-play-circle::before { content: "=EF=85=84"; }
+
+.fa-ticket::before { content: "=EF=85=85"; }
+
+.fa-minus-square::before { content: "=EF=85=86"; }
+
+.fa-minus-square-o::before { content: "=EF=85=87"; }
+
+.fa-level-up::before { content: "=EF=85=88"; }
+
+.fa-level-down::before { content: "=EF=85=89"; }
+
+.fa-check-square::before { content: "=EF=85=8A"; }
+
+.fa-pencil-square::before { content: "=EF=85=8B"; }
+
+.fa-external-link-square::before { content: "=EF=85=8C"; }
+
+.fa-share-square::before { content: "=EF=85=8D"; }
+
+.fa-compass::before { content: "=EF=85=8E"; }
+
+.fa-toggle-down::before, .fa-caret-square-o-down::before { content: "=EF=85=
+=90"; }
+
+.fa-toggle-up::before, .fa-caret-square-o-up::before { content: "=EF=85=91"=
+; }
+
+.fa-toggle-right::before, .fa-caret-square-o-right::before { content: "=EF=
+=85=92"; }
+
+.fa-euro::before, .fa-eur::before { content: "=EF=85=93"; }
+
+.fa-gbp::before { content: "=EF=85=94"; }
+
+.fa-dollar::before, .fa-usd::before { content: "=EF=85=95"; }
+
+.fa-rupee::before, .fa-inr::before { content: "=EF=85=96"; }
+
+.fa-cny::before, .fa-rmb::before, .fa-yen::before, .fa-jpy::before { conten=
+t: "=EF=85=97"; }
+
+.fa-ruble::before, .fa-rouble::before, .fa-rub::before { content: "=EF=85=
+=98"; }
+
+.fa-won::before, .fa-krw::before { content: "=EF=85=99"; }
+
+.fa-bitcoin::before, .fa-btc::before { content: "=EF=85=9A"; }
+
+.fa-file::before { content: "=EF=85=9B"; }
+
+.fa-file-text::before { content: "=EF=85=9C"; }
+
+.fa-sort-alpha-asc::before { content: "=EF=85=9D"; }
+
+.fa-sort-alpha-desc::before { content: "=EF=85=9E"; }
+
+.fa-sort-amount-asc::before { content: "=EF=85=A0"; }
+
+.fa-sort-amount-desc::before { content: "=EF=85=A1"; }
+
+.fa-sort-numeric-asc::before { content: "=EF=85=A2"; }
+
+.fa-sort-numeric-desc::before { content: "=EF=85=A3"; }
+
+.fa-thumbs-up::before { content: "=EF=85=A4"; }
+
+.fa-thumbs-down::before { content: "=EF=85=A5"; }
+
+.fa-youtube-square::before { content: "=EF=85=A6"; }
+
+.fa-youtube::before { content: "=EF=85=A7"; }
+
+.fa-xing::before { content: "=EF=85=A8"; }
+
+.fa-xing-square::before { content: "=EF=85=A9"; }
+
+.fa-youtube-play::before { content: "=EF=85=AA"; }
+
+.fa-dropbox::before { content: "=EF=85=AB"; }
+
+.fa-stack-overflow::before { content: "=EF=85=AC"; }
+
+.fa-instagram::before { content: "=EF=85=AD"; }
+
+.fa-flickr::before { content: "=EF=85=AE"; }
+
+.fa-adn::before { content: "=EF=85=B0"; }
+
+.fa-bitbucket::before { content: "=EF=85=B1"; }
+
+.fa-bitbucket-square::before { content: "=EF=85=B2"; }
+
+.fa-tumblr::before { content: "=EF=85=B3"; }
+
+.fa-tumblr-square::before { content: "=EF=85=B4"; }
+
+.fa-long-arrow-down::before { content: "=EF=85=B5"; }
+
+.fa-long-arrow-up::before { content: "=EF=85=B6"; }
+
+.fa-long-arrow-left::before { content: "=EF=85=B7"; }
+
+.fa-long-arrow-right::before { content: "=EF=85=B8"; }
+
+.fa-apple::before { content: "=EF=85=B9"; }
+
+.fa-windows::before { content: "=EF=85=BA"; }
+
+.fa-android::before { content: "=EF=85=BB"; }
+
+.fa-linux::before { content: "=EF=85=BC"; }
+
+.fa-dribbble::before { content: "=EF=85=BD"; }
+
+.fa-skype::before { content: "=EF=85=BE"; }
+
+.fa-foursquare::before { content: "=EF=86=80"; }
+
+.fa-trello::before { content: "=EF=86=81"; }
+
+.fa-female::before { content: "=EF=86=82"; }
+
+.fa-male::before { content: "=EF=86=83"; }
+
+.fa-gittip::before, .fa-gratipay::before { content: "=EF=86=84"; }
+
+.fa-sun-o::before { content: "=EF=86=85"; }
+
+.fa-moon-o::before { content: "=EF=86=86"; }
+
+.fa-archive::before { content: "=EF=86=87"; }
+
+.fa-bug::before { content: "=EF=86=88"; }
+
+.fa-vk::before { content: "=EF=86=89"; }
+
+.fa-weibo::before { content: "=EF=86=8A"; }
+
+.fa-renren::before { content: "=EF=86=8B"; }
+
+.fa-pagelines::before { content: "=EF=86=8C"; }
+
+.fa-stack-exchange::before { content: "=EF=86=8D"; }
+
+.fa-arrow-circle-o-right::before { content: "=EF=86=8E"; }
+
+.fa-arrow-circle-o-left::before { content: "=EF=86=90"; }
+
+.fa-toggle-left::before, .fa-caret-square-o-left::before { content: "=EF=86=
+=91"; }
+
+.fa-dot-circle-o::before { content: "=EF=86=92"; }
+
+.fa-wheelchair::before { content: "=EF=86=93"; }
+
+.fa-vimeo-square::before { content: "=EF=86=94"; }
+
+.fa-turkish-lira::before, .fa-try::before { content: "=EF=86=95"; }
+
+.fa-plus-square-o::before { content: "=EF=86=96"; }
+
+.fa-space-shuttle::before { content: "=EF=86=97"; }
+
+.fa-slack::before { content: "=EF=86=98"; }
+
+.fa-envelope-square::before { content: "=EF=86=99"; }
+
+.fa-wordpress::before { content: "=EF=86=9A"; }
+
+.fa-openid::before { content: "=EF=86=9B"; }
+
+.fa-institution::before, .fa-bank::before, .fa-university::before { content=
+: "=EF=86=9C"; }
+
+.fa-mortar-board::before, .fa-graduation-cap::before { content: "=EF=86=9D"=
+; }
+
+.fa-yahoo::before { content: "=EF=86=9E"; }
+
+.fa-google::before { content: "=EF=86=A0"; }
+
+.fa-reddit::before { content: "=EF=86=A1"; }
+
+.fa-reddit-square::before { content: "=EF=86=A2"; }
+
+.fa-stumbleupon-circle::before { content: "=EF=86=A3"; }
+
+.fa-stumbleupon::before { content: "=EF=86=A4"; }
+
+.fa-delicious::before { content: "=EF=86=A5"; }
+
+.fa-digg::before { content: "=EF=86=A6"; }
+
+.fa-pied-piper-pp::before { content: "=EF=86=A7"; }
+
+.fa-pied-piper-alt::before { content: "=EF=86=A8"; }
+
+.fa-drupal::before { content: "=EF=86=A9"; }
+
+.fa-joomla::before { content: "=EF=86=AA"; }
+
+.fa-language::before { content: "=EF=86=AB"; }
+
+.fa-fax::before { content: "=EF=86=AC"; }
+
+.fa-building::before { content: "=EF=86=AD"; }
+
+.fa-child::before { content: "=EF=86=AE"; }
+
+.fa-paw::before { content: "=EF=86=B0"; }
+
+.fa-spoon::before { content: "=EF=86=B1"; }
+
+.fa-cube::before { content: "=EF=86=B2"; }
+
+.fa-cubes::before { content: "=EF=86=B3"; }
+
+.fa-behance::before { content: "=EF=86=B4"; }
+
+.fa-behance-square::before { content: "=EF=86=B5"; }
+
+.fa-steam::before { content: "=EF=86=B6"; }
+
+.fa-steam-square::before { content: "=EF=86=B7"; }
+
+.fa-recycle::before { content: "=EF=86=B8"; }
+
+.fa-automobile::before, .fa-car::before { content: "=EF=86=B9"; }
+
+.fa-cab::before, .fa-taxi::before { content: "=EF=86=BA"; }
+
+.fa-tree::before { content: "=EF=86=BB"; }
+
+.fa-spotify::before { content: "=EF=86=BC"; }
+
+.fa-deviantart::before { content: "=EF=86=BD"; }
+
+.fa-soundcloud::before { content: "=EF=86=BE"; }
+
+.fa-database::before { content: "=EF=87=80"; }
+
+.fa-file-pdf-o::before { content: "=EF=87=81"; }
+
+.fa-file-word-o::before { content: "=EF=87=82"; }
+
+.fa-file-excel-o::before { content: "=EF=87=83"; }
+
+.fa-file-powerpoint-o::before { content: "=EF=87=84"; }
+
+.fa-file-photo-o::before, .fa-file-picture-o::before, .fa-file-image-o::bef=
+ore { content: "=EF=87=85"; }
+
+.fa-file-zip-o::before, .fa-file-archive-o::before { content: "=EF=87=86"; =
+}
+
+.fa-file-sound-o::before, .fa-file-audio-o::before { content: "=EF=87=87"; =
+}
+
+.fa-file-movie-o::before, .fa-file-video-o::before { content: "=EF=87=88"; =
+}
+
+.fa-file-code-o::before { content: "=EF=87=89"; }
+
+.fa-vine::before { content: "=EF=87=8A"; }
+
+.fa-codepen::before { content: "=EF=87=8B"; }
+
+.fa-jsfiddle::before { content: "=EF=87=8C"; }
+
+.fa-life-bouy::before, .fa-life-buoy::before, .fa-life-saver::before, .fa-s=
+upport::before, .fa-life-ring::before { content: "=EF=87=8D"; }
+
+.fa-circle-o-notch::before { content: "=EF=87=8E"; }
+
+.fa-ra::before, .fa-resistance::before, .fa-rebel::before { content: "=EF=
+=87=90"; }
+
+.fa-ge::before, .fa-empire::before { content: "=EF=87=91"; }
+
+.fa-git-square::before { content: "=EF=87=92"; }
+
+.fa-git::before { content: "=EF=87=93"; }
+
+.fa-y-combinator-square::before, .fa-yc-square::before, .fa-hacker-news::be=
+fore { content: "=EF=87=94"; }
+
+.fa-tencent-weibo::before { content: "=EF=87=95"; }
+
+.fa-qq::before { content: "=EF=87=96"; }
+
+.fa-wechat::before, .fa-weixin::before { content: "=EF=87=97"; }
+
+.fa-send::before, .fa-paper-plane::before { content: "=EF=87=98"; }
+
+.fa-send-o::before, .fa-paper-plane-o::before { content: "=EF=87=99"; }
+
+.fa-history::before { content: "=EF=87=9A"; }
+
+.fa-circle-thin::before { content: "=EF=87=9B"; }
+
+.fa-header::before { content: "=EF=87=9C"; }
+
+.fa-paragraph::before { content: "=EF=87=9D"; }
+
+.fa-sliders::before { content: "=EF=87=9E"; }
+
+.fa-share-alt::before { content: "=EF=87=A0"; }
+
+.fa-share-alt-square::before { content: "=EF=87=A1"; }
+
+.fa-bomb::before { content: "=EF=87=A2"; }
+
+.fa-soccer-ball-o::before, .fa-futbol-o::before { content: "=EF=87=A3"; }
+
+.fa-tty::before { content: "=EF=87=A4"; }
+
+.fa-binoculars::before { content: "=EF=87=A5"; }
+
+.fa-plug::before { content: "=EF=87=A6"; }
+
+.fa-slideshare::before { content: "=EF=87=A7"; }
+
+.fa-twitch::before { content: "=EF=87=A8"; }
+
+.fa-yelp::before { content: "=EF=87=A9"; }
+
+.fa-newspaper-o::before { content: "=EF=87=AA"; }
+
+.fa-wifi::before { content: "=EF=87=AB"; }
+
+.fa-calculator::before { content: "=EF=87=AC"; }
+
+.fa-paypal::before { content: "=EF=87=AD"; }
+
+.fa-google-wallet::before { content: "=EF=87=AE"; }
+
+.fa-cc-visa::before { content: "=EF=87=B0"; }
+
+.fa-cc-mastercard::before { content: "=EF=87=B1"; }
+
+.fa-cc-discover::before { content: "=EF=87=B2"; }
+
+.fa-cc-amex::before { content: "=EF=87=B3"; }
+
+.fa-cc-paypal::before { content: "=EF=87=B4"; }
+
+.fa-cc-stripe::before { content: "=EF=87=B5"; }
+
+.fa-bell-slash::before { content: "=EF=87=B6"; }
+
+.fa-bell-slash-o::before { content: "=EF=87=B7"; }
+
+.fa-trash::before { content: "=EF=87=B8"; }
+
+.fa-copyright::before { content: "=EF=87=B9"; }
+
+.fa-at::before { content: "=EF=87=BA"; }
+
+.fa-eyedropper::before { content: "=EF=87=BB"; }
+
+.fa-paint-brush::before { content: "=EF=87=BC"; }
+
+.fa-birthday-cake::before { content: "=EF=87=BD"; }
+
+.fa-area-chart::before { content: "=EF=87=BE"; }
+
+.fa-pie-chart::before { content: "=EF=88=80"; }
+
+.fa-line-chart::before { content: "=EF=88=81"; }
+
+.fa-lastfm::before { content: "=EF=88=82"; }
+
+.fa-lastfm-square::before { content: "=EF=88=83"; }
+
+.fa-toggle-off::before { content: "=EF=88=84"; }
+
+.fa-toggle-on::before { content: "=EF=88=85"; }
+
+.fa-bicycle::before { content: "=EF=88=86"; }
+
+.fa-bus::before { content: "=EF=88=87"; }
+
+.fa-ioxhost::before { content: "=EF=88=88"; }
+
+.fa-angellist::before { content: "=EF=88=89"; }
+
+.fa-cc::before { content: "=EF=88=8A"; }
+
+.fa-shekel::before, .fa-sheqel::before, .fa-ils::before { content: "=EF=88=
+=8B"; }
+
+.fa-meanpath::before { content: "=EF=88=8C"; }
+
+.fa-buysellads::before { content: "=EF=88=8D"; }
+
+.fa-connectdevelop::before { content: "=EF=88=8E"; }
+
+.fa-dashcube::before { content: "=EF=88=90"; }
+
+.fa-forumbee::before { content: "=EF=88=91"; }
+
+.fa-leanpub::before { content: "=EF=88=92"; }
+
+.fa-sellsy::before { content: "=EF=88=93"; }
+
+.fa-shirtsinbulk::before { content: "=EF=88=94"; }
+
+.fa-simplybuilt::before { content: "=EF=88=95"; }
+
+.fa-skyatlas::before { content: "=EF=88=96"; }
+
+.fa-cart-plus::before { content: "=EF=88=97"; }
+
+.fa-cart-arrow-down::before { content: "=EF=88=98"; }
+
+.fa-diamond::before { content: "=EF=88=99"; }
+
+.fa-ship::before { content: "=EF=88=9A"; }
+
+.fa-user-secret::before { content: "=EF=88=9B"; }
+
+.fa-motorcycle::before { content: "=EF=88=9C"; }
+
+.fa-street-view::before { content: "=EF=88=9D"; }
+
+.fa-heartbeat::before { content: "=EF=88=9E"; }
+
+.fa-venus::before { content: "=EF=88=A1"; }
+
+.fa-mars::before { content: "=EF=88=A2"; }
+
+.fa-mercury::before { content: "=EF=88=A3"; }
+
+.fa-intersex::before, .fa-transgender::before { content: "=EF=88=A4"; }
+
+.fa-transgender-alt::before { content: "=EF=88=A5"; }
+
+.fa-venus-double::before { content: "=EF=88=A6"; }
+
+.fa-mars-double::before { content: "=EF=88=A7"; }
+
+.fa-venus-mars::before { content: "=EF=88=A8"; }
+
+.fa-mars-stroke::before { content: "=EF=88=A9"; }
+
+.fa-mars-stroke-v::before { content: "=EF=88=AA"; }
+
+.fa-mars-stroke-h::before { content: "=EF=88=AB"; }
+
+.fa-neuter::before { content: "=EF=88=AC"; }
+
+.fa-genderless::before { content: "=EF=88=AD"; }
+
+.fa-facebook-official::before { content: "=EF=88=B0"; }
+
+.fa-pinterest-p::before { content: "=EF=88=B1"; }
+
+.fa-whatsapp::before { content: "=EF=88=B2"; }
+
+.fa-server::before { content: "=EF=88=B3"; }
+
+.fa-user-plus::before { content: "=EF=88=B4"; }
+
+.fa-user-times::before { content: "=EF=88=B5"; }
+
+.fa-hotel::before, .fa-bed::before { content: "=EF=88=B6"; }
+
+.fa-viacoin::before { content: "=EF=88=B7"; }
+
+.fa-train::before { content: "=EF=88=B8"; }
+
+.fa-subway::before { content: "=EF=88=B9"; }
+
+.fa-medium::before { content: "=EF=88=BA"; }
+
+.fa-yc::before, .fa-y-combinator::before { content: "=EF=88=BB"; }
+
+.fa-optin-monster::before { content: "=EF=88=BC"; }
+
+.fa-opencart::before { content: "=EF=88=BD"; }
+
+.fa-expeditedssl::before { content: "=EF=88=BE"; }
+
+.fa-battery-4::before, .fa-battery::before, .fa-battery-full::before { cont=
+ent: "=EF=89=80"; }
+
+.fa-battery-3::before, .fa-battery-three-quarters::before { content: "=EF=
+=89=81"; }
+
+.fa-battery-2::before, .fa-battery-half::before { content: "=EF=89=82"; }
+
+.fa-battery-1::before, .fa-battery-quarter::before { content: "=EF=89=83"; =
+}
+
+.fa-battery-0::before, .fa-battery-empty::before { content: "=EF=89=84"; }
+
+.fa-mouse-pointer::before { content: "=EF=89=85"; }
+
+.fa-i-cursor::before { content: "=EF=89=86"; }
+
+.fa-object-group::before { content: "=EF=89=87"; }
+
+.fa-object-ungroup::before { content: "=EF=89=88"; }
+
+.fa-sticky-note::before { content: "=EF=89=89"; }
+
+.fa-sticky-note-o::before { content: "=EF=89=8A"; }
+
+.fa-cc-jcb::before { content: "=EF=89=8B"; }
+
+.fa-cc-diners-club::before { content: "=EF=89=8C"; }
+
+.fa-clone::before { content: "=EF=89=8D"; }
+
+.fa-balance-scale::before { content: "=EF=89=8E"; }
+
+.fa-hourglass-o::before { content: "=EF=89=90"; }
+
+.fa-hourglass-1::before, .fa-hourglass-start::before { content: "=EF=89=91"=
+; }
+
+.fa-hourglass-2::before, .fa-hourglass-half::before { content: "=EF=89=92";=
+ }
+
+.fa-hourglass-3::before, .fa-hourglass-end::before { content: "=EF=89=93"; =
+}
+
+.fa-hourglass::before { content: "=EF=89=94"; }
+
+.fa-hand-grab-o::before, .fa-hand-rock-o::before { content: "=EF=89=95"; }
+
+.fa-hand-stop-o::before, .fa-hand-paper-o::before { content: "=EF=89=96"; }
+
+.fa-hand-scissors-o::before { content: "=EF=89=97"; }
+
+.fa-hand-lizard-o::before { content: "=EF=89=98"; }
+
+.fa-hand-spock-o::before { content: "=EF=89=99"; }
+
+.fa-hand-pointer-o::before { content: "=EF=89=9A"; }
+
+.fa-hand-peace-o::before { content: "=EF=89=9B"; }
+
+.fa-trademark::before { content: "=EF=89=9C"; }
+
+.fa-registered::before { content: "=EF=89=9D"; }
+
+.fa-creative-commons::before { content: "=EF=89=9E"; }
+
+.fa-gg::before { content: "=EF=89=A0"; }
+
+.fa-gg-circle::before { content: "=EF=89=A1"; }
+
+.fa-tripadvisor::before { content: "=EF=89=A2"; }
+
+.fa-odnoklassniki::before { content: "=EF=89=A3"; }
+
+.fa-odnoklassniki-square::before { content: "=EF=89=A4"; }
+
+.fa-get-pocket::before { content: "=EF=89=A5"; }
+
+.fa-wikipedia-w::before { content: "=EF=89=A6"; }
+
+.fa-safari::before { content: "=EF=89=A7"; }
+
+.fa-chrome::before { content: "=EF=89=A8"; }
+
+.fa-firefox::before { content: "=EF=89=A9"; }
+
+.fa-opera::before { content: "=EF=89=AA"; }
+
+.fa-internet-explorer::before { content: "=EF=89=AB"; }
+
+.fa-tv::before, .fa-television::before { content: "=EF=89=AC"; }
+
+.fa-contao::before { content: "=EF=89=AD"; }
+
+.fa-500px::before { content: "=EF=89=AE"; }
+
+.fa-amazon::before { content: "=EF=89=B0"; }
+
+.fa-calendar-plus-o::before { content: "=EF=89=B1"; }
+
+.fa-calendar-minus-o::before { content: "=EF=89=B2"; }
+
+.fa-calendar-times-o::before { content: "=EF=89=B3"; }
+
+.fa-calendar-check-o::before { content: "=EF=89=B4"; }
+
+.fa-industry::before { content: "=EF=89=B5"; }
+
+.fa-map-pin::before { content: "=EF=89=B6"; }
+
+.fa-map-signs::before { content: "=EF=89=B7"; }
+
+.fa-map-o::before { content: "=EF=89=B8"; }
+
+.fa-map::before { content: "=EF=89=B9"; }
+
+.fa-commenting::before { content: "=EF=89=BA"; }
+
+.fa-commenting-o::before { content: "=EF=89=BB"; }
+
+.fa-houzz::before { content: "=EF=89=BC"; }
+
+.fa-vimeo::before { content: "=EF=89=BD"; }
+
+.fa-black-tie::before { content: "=EF=89=BE"; }
+
+.fa-fonticons::before { content: "=EF=8A=80"; }
+
+.fa-reddit-alien::before { content: "=EF=8A=81"; }
+
+.fa-edge::before { content: "=EF=8A=82"; }
+
+.fa-credit-card-alt::before { content: "=EF=8A=83"; }
+
+.fa-codiepie::before { content: "=EF=8A=84"; }
+
+.fa-modx::before { content: "=EF=8A=85"; }
+
+.fa-fort-awesome::before { content: "=EF=8A=86"; }
+
+.fa-usb::before { content: "=EF=8A=87"; }
+
+.fa-product-hunt::before { content: "=EF=8A=88"; }
+
+.fa-mixcloud::before { content: "=EF=8A=89"; }
+
+.fa-scribd::before { content: "=EF=8A=8A"; }
+
+.fa-pause-circle::before { content: "=EF=8A=8B"; }
+
+.fa-pause-circle-o::before { content: "=EF=8A=8C"; }
+
+.fa-stop-circle::before { content: "=EF=8A=8D"; }
+
+.fa-stop-circle-o::before { content: "=EF=8A=8E"; }
+
+.fa-shopping-bag::before { content: "=EF=8A=90"; }
+
+.fa-shopping-basket::before { content: "=EF=8A=91"; }
+
+.fa-hashtag::before { content: "=EF=8A=92"; }
+
+.fa-bluetooth::before { content: "=EF=8A=93"; }
+
+.fa-bluetooth-b::before { content: "=EF=8A=94"; }
+
+.fa-percent::before { content: "=EF=8A=95"; }
+
+.fa-gitlab::before { content: "=EF=8A=96"; }
+
+.fa-wpbeginner::before { content: "=EF=8A=97"; }
+
+.fa-wpforms::before { content: "=EF=8A=98"; }
+
+.fa-envira::before { content: "=EF=8A=99"; }
+
+.fa-universal-access::before { content: "=EF=8A=9A"; }
+
+.fa-wheelchair-alt::before { content: "=EF=8A=9B"; }
+
+.fa-question-circle-o::before { content: "=EF=8A=9C"; }
+
+.fa-blind::before { content: "=EF=8A=9D"; }
+
+.fa-audio-description::before { content: "=EF=8A=9E"; }
+
+.fa-volume-control-phone::before { content: "=EF=8A=A0"; }
+
+.fa-braille::before { content: "=EF=8A=A1"; }
+
+.fa-assistive-listening-systems::before { content: "=EF=8A=A2"; }
+
+.fa-asl-interpreting::before, .fa-american-sign-language-interpreting::befo=
+re { content: "=EF=8A=A3"; }
+
+.fa-deafness::before, .fa-hard-of-hearing::before, .fa-deaf::before { conte=
+nt: "=EF=8A=A4"; }
+
+.fa-glide::before { content: "=EF=8A=A5"; }
+
+.fa-glide-g::before { content: "=EF=8A=A6"; }
+
+.fa-signing::before, .fa-sign-language::before { content: "=EF=8A=A7"; }
+
+.fa-low-vision::before { content: "=EF=8A=A8"; }
+
+.fa-viadeo::before { content: "=EF=8A=A9"; }
+
+.fa-viadeo-square::before { content: "=EF=8A=AA"; }
+
+.fa-snapchat::before { content: "=EF=8A=AB"; }
+
+.fa-snapchat-ghost::before { content: "=EF=8A=AC"; }
+
+.fa-snapchat-square::before { content: "=EF=8A=AD"; }
+
+.fa-pied-piper::before { content: "=EF=8A=AE"; }
+
+.fa-first-order::before { content: "=EF=8A=B0"; }
+
+.fa-yoast::before { content: "=EF=8A=B1"; }
+
+.fa-themeisle::before { content: "=EF=8A=B2"; }
+
+.fa-google-plus-circle::before, .fa-google-plus-official::before { content:=
+ "=EF=8A=B3"; }
+
+.fa-fa::before, .fa-font-awesome::before { content: "=EF=8A=B4"; }
+
+.fa-handshake-o::before { content: "=EF=8A=B5"; }
+
+.fa-envelope-open::before { content: "=EF=8A=B6"; }
+
+.fa-envelope-open-o::before { content: "=EF=8A=B7"; }
+
+.fa-linode::before { content: "=EF=8A=B8"; }
+
+.fa-address-book::before { content: "=EF=8A=B9"; }
+
+.fa-address-book-o::before { content: "=EF=8A=BA"; }
+
+.fa-vcard::before, .fa-address-card::before { content: "=EF=8A=BB"; }
+
+.fa-vcard-o::before, .fa-address-card-o::before { content: "=EF=8A=BC"; }
+
+.fa-user-circle::before { content: "=EF=8A=BD"; }
+
+.fa-user-circle-o::before { content: "=EF=8A=BE"; }
+
+.fa-user-o::before { content: "=EF=8B=80"; }
+
+.fa-id-badge::before { content: "=EF=8B=81"; }
+
+.fa-drivers-license::before, .fa-id-card::before { content: "=EF=8B=82"; }
+
+.fa-drivers-license-o::before, .fa-id-card-o::before { content: "=EF=8B=83"=
+; }
+
+.fa-quora::before { content: "=EF=8B=84"; }
+
+.fa-free-code-camp::before { content: "=EF=8B=85"; }
+
+.fa-telegram::before { content: "=EF=8B=86"; }
+
+.fa-thermometer-4::before, .fa-thermometer::before, .fa-thermometer-full::b=
+efore { content: "=EF=8B=87"; }
+
+.fa-thermometer-3::before, .fa-thermometer-three-quarters::before { content=
+: "=EF=8B=88"; }
+
+.fa-thermometer-2::before, .fa-thermometer-half::before { content: "=EF=8B=
+=89"; }
+
+.fa-thermometer-1::before, .fa-thermometer-quarter::before { content: "=EF=
+=8B=8A"; }
+
+.fa-thermometer-0::before, .fa-thermometer-empty::before { content: "=EF=8B=
+=8B"; }
+
+.fa-shower::before { content: "=EF=8B=8C"; }
+
+.fa-bathtub::before, .fa-s15::before, .fa-bath::before { content: "=EF=8B=
+=8D"; }
+
+.fa-podcast::before { content: "=EF=8B=8E"; }
+
+.fa-window-maximize::before { content: "=EF=8B=90"; }
+
+.fa-window-minimize::before { content: "=EF=8B=91"; }
+
+.fa-window-restore::before { content: "=EF=8B=92"; }
+
+.fa-times-rectangle::before, .fa-window-close::before { content: "=EF=8B=93=
+"; }
+
+.fa-times-rectangle-o::before, .fa-window-close-o::before { content: "=EF=
+=8B=94"; }
+
+.fa-bandcamp::before { content: "=EF=8B=95"; }
+
+.fa-grav::before { content: "=EF=8B=96"; }
+
+.fa-etsy::before { content: "=EF=8B=97"; }
+
+.fa-imdb::before { content: "=EF=8B=98"; }
+
+.fa-ravelry::before { content: "=EF=8B=99"; }
+
+.fa-eercast::before { content: "=EF=8B=9A"; }
+
+.fa-microchip::before { content: "=EF=8B=9B"; }
+
+.fa-snowflake-o::before { content: "=EF=8B=9C"; }
+
+.fa-superpowers::before { content: "=EF=8B=9D"; }
+
+.fa-wpexplorer::before { content: "=EF=8B=9E"; }
+
+.fa-meetup::before { content: "=EF=8B=A0"; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0px; margi=
+n: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); border: 0px; }
+
+.sr-only-focusable:active, .sr-only-focusable:focus { position: static; wid=
+th: auto; height: auto; margin: 0px; overflow: visible; clip: auto; }
+------MultipartBoundary--ih9l6io4MFNxyUrye3BoH9tMghoRvwoW4T0FYs0S7G----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://zcash.github.io/halo2/fonts/fonts.css
+
+@charset "utf-8";
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 300=
+; src: local("Open Sans Light"), local("OpenSans-Light"), url("open-sans-v1=
+7-all-charsets-300.woff2") format("woff2"); }
+
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: 300=
+; src: local("Open Sans Light Italic"), local("OpenSans-LightItalic"), url(=
+"open-sans-v17-all-charsets-300italic.woff2") format("woff2"); }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400=
+; src: local("Open Sans Regular"), local("OpenSans-Regular"), url("open-san=
+s-v17-all-charsets-regular.woff2") format("woff2"); }
+
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: 400=
+; src: local("Open Sans Italic"), local("OpenSans-Italic"), url("open-sans-=
+v17-all-charsets-italic.woff2") format("woff2"); }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 600=
+; src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"), url("open-s=
+ans-v17-all-charsets-600.woff2") format("woff2"); }
+
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: 600=
+; src: local("Open Sans SemiBold Italic"), local("OpenSans-SemiBoldItalic")=
+, url("open-sans-v17-all-charsets-600italic.woff2") format("woff2"); }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700=
+; src: local("Open Sans Bold"), local("OpenSans-Bold"), url("open-sans-v17-=
+all-charsets-700.woff2") format("woff2"); }
+
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: 700=
+; src: local("Open Sans Bold Italic"), local("OpenSans-BoldItalic"), url("o=
+pen-sans-v17-all-charsets-700italic.woff2") format("woff2"); }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 800=
+; src: local("Open Sans ExtraBold"), local("OpenSans-ExtraBold"), url("open=
+-sans-v17-all-charsets-800.woff2") format("woff2"); }
+
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: 800=
+; src: local("Open Sans ExtraBold Italic"), local("OpenSans-ExtraBoldItalic=
+"), url("open-sans-v17-all-charsets-800italic.woff2") format("woff2"); }
+
+@font-face { font-family: "Source Code Pro"; font-style: normal; font-weigh=
+t: 500; src: url("source-code-pro-v11-all-charsets-500.woff2") format("woff=
+2"); }
+------MultipartBoundary--ih9l6io4MFNxyUrye3BoH9tMghoRvwoW4T0FYs0S7G----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://zcash.github.io/halo2/highlight.css
+
+@charset "utf-8";
+
+.hljs-comment, .hljs-quote { color: rgb(87, 87, 87); }
+
+.hljs-variable, .hljs-template-variable, .hljs-attribute, .hljs-tag, .hljs-=
+name, .hljs-regexp, .hljs-link, .hljs-name, .hljs-selector-id, .hljs-select=
+or-class { color: rgb(215, 0, 37); }
+
+.hljs-number, .hljs-meta, .hljs-built_in, .hljs-builtin-name, .hljs-literal=
+, .hljs-type, .hljs-params { color: rgb(178, 30, 0); }
+
+.hljs-string, .hljs-symbol, .hljs-bullet { color: rgb(0, 130, 0); }
+
+.hljs-title, .hljs-section { color: rgb(0, 48, 242); }
+
+.hljs-keyword, .hljs-selector-tag { color: rgb(157, 0, 236); }
+
+.hljs { display: block; overflow-x: auto; background: rgb(246, 247, 246); c=
+olor: rgb(0, 0, 0); }
+
+.hljs-emphasis { font-style: italic; }
+
+.hljs-strong { font-weight: bold; }
+
+.hljs-addition { color: rgb(34, 134, 58); background-color: rgb(240, 255, 2=
+44); }
+
+.hljs-deletion { color: rgb(179, 29, 40); background-color: rgb(255, 238, 2=
+40); }
+------MultipartBoundary--ih9l6io4MFNxyUrye3BoH9tMghoRvwoW4T0FYs0S7G----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css
+
+@charset "utf-8";
+
+@font-face { font-family: KaTeX_AMS; src: url("fonts/KaTeX_AMS-Regular.woff=
+2") format("woff2"), url("fonts/KaTeX_AMS-Regular.woff") format("woff"), ur=
+l("fonts/KaTeX_AMS-Regular.ttf") format("truetype"); font-weight: 400; font=
+-style: normal; }
+
+@font-face { font-family: KaTeX_Caligraphic; src: url("fonts/KaTeX_Caligrap=
+hic-Bold.woff2") format("woff2"), url("fonts/KaTeX_Caligraphic-Bold.woff") =
+format("woff"), url("fonts/KaTeX_Caligraphic-Bold.ttf") format("truetype");=
+ font-weight: 700; font-style: normal; }
+
+@font-face { font-family: KaTeX_Caligraphic; src: url("fonts/KaTeX_Caligrap=
+hic-Regular.woff2") format("woff2"), url("fonts/KaTeX_Caligraphic-Regular.w=
+off") format("woff"), url("fonts/KaTeX_Caligraphic-Regular.ttf") format("tr=
+uetype"); font-weight: 400; font-style: normal; }
+
+@font-face { font-family: KaTeX_Fraktur; src: url("fonts/KaTeX_Fraktur-Bold=
+.woff2") format("woff2"), url("fonts/KaTeX_Fraktur-Bold.woff") format("woff=
+"), url("fonts/KaTeX_Fraktur-Bold.ttf") format("truetype"); font-weight: 70=
+0; font-style: normal; }
+
+@font-face { font-family: KaTeX_Fraktur; src: url("fonts/KaTeX_Fraktur-Regu=
+lar.woff2") format("woff2"), url("fonts/KaTeX_Fraktur-Regular.woff") format=
+("woff"), url("fonts/KaTeX_Fraktur-Regular.ttf") format("truetype"); font-w=
+eight: 400; font-style: normal; }
+
+@font-face { font-family: KaTeX_Main; src: url("fonts/KaTeX_Main-Bold.woff2=
+") format("woff2"), url("fonts/KaTeX_Main-Bold.woff") format("woff"), url("=
+fonts/KaTeX_Main-Bold.ttf") format("truetype"); font-weight: 700; font-styl=
+e: normal; }
+
+@font-face { font-family: KaTeX_Main; src: url("fonts/KaTeX_Main-BoldItalic=
+.woff2") format("woff2"), url("fonts/KaTeX_Main-BoldItalic.woff") format("w=
+off"), url("fonts/KaTeX_Main-BoldItalic.ttf") format("truetype"); font-weig=
+ht: 700; font-style: italic; }
+
+@font-face { font-family: KaTeX_Main; src: url("fonts/KaTeX_Main-Italic.wof=
+f2") format("woff2"), url("fonts/KaTeX_Main-Italic.woff") format("woff"), u=
+rl("fonts/KaTeX_Main-Italic.ttf") format("truetype"); font-weight: 400; fon=
+t-style: italic; }
+
+@font-face { font-family: KaTeX_Main; src: url("fonts/KaTeX_Main-Regular.wo=
+ff2") format("woff2"), url("fonts/KaTeX_Main-Regular.woff") format("woff"),=
+ url("fonts/KaTeX_Main-Regular.ttf") format("truetype"); font-weight: 400; =
+font-style: normal; }
+
+@font-face { font-family: KaTeX_Math; src: url("fonts/KaTeX_Math-BoldItalic=
+.woff2") format("woff2"), url("fonts/KaTeX_Math-BoldItalic.woff") format("w=
+off"), url("fonts/KaTeX_Math-BoldItalic.ttf") format("truetype"); font-weig=
+ht: 700; font-style: italic; }
+
+@font-face { font-family: KaTeX_Math; src: url("fonts/KaTeX_Math-Italic.wof=
+f2") format("woff2"), url("fonts/KaTeX_Math-Italic.woff") format("woff"), u=
+rl("fonts/KaTeX_Math-Italic.ttf") format("truetype"); font-weight: 400; fon=
+t-style: italic; }
+
+@font-face { font-family: KaTeX_SansSerif; src: url("fonts/KaTeX_SansSerif-=
+Bold.woff2") format("woff2"), url("fonts/KaTeX_SansSerif-Bold.woff") format=
+("woff"), url("fonts/KaTeX_SansSerif-Bold.ttf") format("truetype"); font-we=
+ight: 700; font-style: normal; }
+
+@font-face { font-family: KaTeX_SansSerif; src: url("fonts/KaTeX_SansSerif-=
+Italic.woff2") format("woff2"), url("fonts/KaTeX_SansSerif-Italic.woff") fo=
+rmat("woff"), url("fonts/KaTeX_SansSerif-Italic.ttf") format("truetype"); f=
+ont-weight: 400; font-style: italic; }
+
+@font-face { font-family: KaTeX_SansSerif; src: url("fonts/KaTeX_SansSerif-=
+Regular.woff2") format("woff2"), url("fonts/KaTeX_SansSerif-Regular.woff") =
+format("woff"), url("fonts/KaTeX_SansSerif-Regular.ttf") format("truetype")=
+; font-weight: 400; font-style: normal; }
+
+@font-face { font-family: KaTeX_Script; src: url("fonts/KaTeX_Script-Regula=
+r.woff2") format("woff2"), url("fonts/KaTeX_Script-Regular.woff") format("w=
+off"), url("fonts/KaTeX_Script-Regular.ttf") format("truetype"); font-weigh=
+t: 400; font-style: normal; }
+
+@font-face { font-family: KaTeX_Size1; src: url("fonts/KaTeX_Size1-Regular.=
+woff2") format("woff2"), url("fonts/KaTeX_Size1-Regular.woff") format("woff=
+"), url("fonts/KaTeX_Size1-Regular.ttf") format("truetype"); font-weight: 4=
+00; font-style: normal; }
+
+@font-face { font-family: KaTeX_Size2; src: url("fonts/KaTeX_Size2-Regular.=
+woff2") format("woff2"), url("fonts/KaTeX_Size2-Regular.woff") format("woff=
+"), url("fonts/KaTeX_Size2-Regular.ttf") format("truetype"); font-weight: 4=
+00; font-style: normal; }
+
+@font-face { font-family: KaTeX_Size3; src: url("fonts/KaTeX_Size3-Regular.=
+woff2") format("woff2"), url("fonts/KaTeX_Size3-Regular.woff") format("woff=
+"), url("fonts/KaTeX_Size3-Regular.ttf") format("truetype"); font-weight: 4=
+00; font-style: normal; }
+
+@font-face { font-family: KaTeX_Size4; src: url("fonts/KaTeX_Size4-Regular.=
+woff2") format("woff2"), url("fonts/KaTeX_Size4-Regular.woff") format("woff=
+"), url("fonts/KaTeX_Size4-Regular.ttf") format("truetype"); font-weight: 4=
+00; font-style: normal; }
+
+@font-face { font-family: KaTeX_Typewriter; src: url("fonts/KaTeX_Typewrite=
+r-Regular.woff2") format("woff2"), url("fonts/KaTeX_Typewriter-Regular.woff=
+") format("woff"), url("fonts/KaTeX_Typewriter-Regular.ttf") format("truety=
+pe"); font-weight: 400; font-style: normal; }
+
+.katex { font: 1.21em / 1.2 KaTeX_Main, "Times New Roman", serif; text-inde=
+nt: 0px; text-rendering: auto; border-color: currentcolor; }
+
+.katex * { }
+
+.katex .katex-version::after { content: "0.12.0"; }
+
+.katex .katex-mathml { position: absolute; clip: rect(1px, 1px, 1px, 1px); =
+padding: 0px; border: 0px; height: 1px; width: 1px; overflow: hidden; }
+
+.katex .katex-html > .newline { display: block; }
+
+.katex .base { position: relative; white-space: nowrap; width: min-content;=
+ }
+
+.katex .base, .katex .strut { display: inline-block; }
+
+.katex .textbf { font-weight: 700; }
+
+.katex .textit { font-style: italic; }
+
+.katex .textrm { font-family: KaTeX_Main; }
+
+.katex .textsf { font-family: KaTeX_SansSerif; }
+
+.katex .texttt { font-family: KaTeX_Typewriter; }
+
+.katex .mathnormal { font-family: KaTeX_Math; font-style: italic; }
+
+.katex .mathit { font-family: KaTeX_Main; font-style: italic; }
+
+.katex .mathrm { font-style: normal; }
+
+.katex .mathbf { font-family: KaTeX_Main; font-weight: 700; }
+
+.katex .boldsymbol { font-family: KaTeX_Math; font-weight: 700; font-style:=
+ italic; }
+
+.katex .amsrm, .katex .mathbb, .katex .textbb { font-family: KaTeX_AMS; }
+
+.katex .mathcal { font-family: KaTeX_Caligraphic; }
+
+.katex .mathfrak, .katex .textfrak { font-family: KaTeX_Fraktur; }
+
+.katex .mathtt { font-family: KaTeX_Typewriter; }
+
+.katex .mathscr, .katex .textscr { font-family: KaTeX_Script; }
+
+.katex .mathsf, .katex .textsf { font-family: KaTeX_SansSerif; }
+
+.katex .mathboldsf, .katex .textboldsf { font-family: KaTeX_SansSerif; font=
+-weight: 700; }
+
+.katex .mathitsf, .katex .textitsf { font-family: KaTeX_SansSerif; font-sty=
+le: italic; }
+
+.katex .mainrm { font-family: KaTeX_Main; font-style: normal; }
+
+.katex .vlist-t { display: inline-table; table-layout: fixed; border-collap=
+se: collapse; }
+
+.katex .vlist-r { display: table-row; }
+
+.katex .vlist { display: table-cell; vertical-align: bottom; position: rela=
+tive; }
+
+.katex .vlist > span { display: block; height: 0px; position: relative; }
+
+.katex .vlist > span > span { display: inline-block; }
+
+.katex .vlist > span > .pstrut { overflow: hidden; width: 0px; }
+
+.katex .vlist-t2 { margin-right: -2px; }
+
+.katex .vlist-s { display: table-cell; vertical-align: bottom; font-size: 1=
+px; width: 2px; min-width: 2px; }
+
+.katex .vbox { flex-direction: column; align-items: baseline; }
+
+.katex .hbox, .katex .vbox { display: inline-flex; }
+
+.katex .hbox { flex-direction: row; width: 100%; }
+
+.katex .thinbox { display: inline-flex; flex-direction: row; width: 0px; ma=
+x-width: 0px; }
+
+.katex .msupsub { text-align: left; }
+
+.katex .mfrac > span > span { text-align: center; }
+
+.katex .mfrac .frac-line { display: inline-block; width: 100%; border-botto=
+m-style: solid; }
+
+.katex .hdashline, .katex .hline, .katex .mfrac .frac-line, .katex .overlin=
+e .overline-line, .katex .rule, .katex .underline .underline-line { min-hei=
+ght: 1px; }
+
+.katex .mspace { display: inline-block; }
+
+.katex .clap, .katex .llap, .katex .rlap { width: 0px; position: relative; =
+}
+
+.katex .clap > .inner, .katex .llap > .inner, .katex .rlap > .inner { posit=
+ion: absolute; }
+
+.katex .clap > .fix, .katex .llap > .fix, .katex .rlap > .fix { display: in=
+line-block; }
+
+.katex .llap > .inner { right: 0px; }
+
+.katex .clap > .inner, .katex .rlap > .inner { left: 0px; }
+
+.katex .clap > .inner > span { margin-left: -50%; margin-right: 50%; }
+
+.katex .rule { display: inline-block; border: 0px solid; position: relative=
+; }
+
+.katex .hline, .katex .overline .overline-line, .katex .underline .underlin=
+e-line { display: inline-block; width: 100%; border-bottom-style: solid; }
+
+.katex .hdashline { display: inline-block; width: 100%; border-bottom-style=
+: dashed; }
+
+.katex .sqrt > .root { margin-left: 0.277778em; margin-right: -0.555556em; =
+}
+
+.katex .fontsize-ensurer.reset-size1.size1, .katex .sizing.reset-size1.size=
+1 { font-size: 1em; }
+
+.katex .fontsize-ensurer.reset-size1.size2, .katex .sizing.reset-size1.size=
+2 { font-size: 1.2em; }
+
+.katex .fontsize-ensurer.reset-size1.size3, .katex .sizing.reset-size1.size=
+3 { font-size: 1.4em; }
+
+.katex .fontsize-ensurer.reset-size1.size4, .katex .sizing.reset-size1.size=
+4 { font-size: 1.6em; }
+
+.katex .fontsize-ensurer.reset-size1.size5, .katex .sizing.reset-size1.size=
+5 { font-size: 1.8em; }
+
+.katex .fontsize-ensurer.reset-size1.size6, .katex .sizing.reset-size1.size=
+6 { font-size: 2em; }
+
+.katex .fontsize-ensurer.reset-size1.size7, .katex .sizing.reset-size1.size=
+7 { font-size: 2.4em; }
+
+.katex .fontsize-ensurer.reset-size1.size8, .katex .sizing.reset-size1.size=
+8 { font-size: 2.88em; }
+
+.katex .fontsize-ensurer.reset-size1.size9, .katex .sizing.reset-size1.size=
+9 { font-size: 3.456em; }
+
+.katex .fontsize-ensurer.reset-size1.size10, .katex .sizing.reset-size1.siz=
+e10 { font-size: 4.148em; }
+
+.katex .fontsize-ensurer.reset-size1.size11, .katex .sizing.reset-size1.siz=
+e11 { font-size: 4.976em; }
+
+.katex .fontsize-ensurer.reset-size2.size1, .katex .sizing.reset-size2.size=
+1 { font-size: 0.833333em; }
+
+.katex .fontsize-ensurer.reset-size2.size2, .katex .sizing.reset-size2.size=
+2 { font-size: 1em; }
+
+.katex .fontsize-ensurer.reset-size2.size3, .katex .sizing.reset-size2.size=
+3 { font-size: 1.16667em; }
+
+.katex .fontsize-ensurer.reset-size2.size4, .katex .sizing.reset-size2.size=
+4 { font-size: 1.33333em; }
+
+.katex .fontsize-ensurer.reset-size2.size5, .katex .sizing.reset-size2.size=
+5 { font-size: 1.5em; }
+
+.katex .fontsize-ensurer.reset-size2.size6, .katex .sizing.reset-size2.size=
+6 { font-size: 1.66667em; }
+
+.katex .fontsize-ensurer.reset-size2.size7, .katex .sizing.reset-size2.size=
+7 { font-size: 2em; }
+
+.katex .fontsize-ensurer.reset-size2.size8, .katex .sizing.reset-size2.size=
+8 { font-size: 2.4em; }
+
+.katex .fontsize-ensurer.reset-size2.size9, .katex .sizing.reset-size2.size=
+9 { font-size: 2.88em; }
+
+.katex .fontsize-ensurer.reset-size2.size10, .katex .sizing.reset-size2.siz=
+e10 { font-size: 3.45667em; }
+
+.katex .fontsize-ensurer.reset-size2.size11, .katex .sizing.reset-size2.siz=
+e11 { font-size: 4.14667em; }
+
+.katex .fontsize-ensurer.reset-size3.size1, .katex .sizing.reset-size3.size=
+1 { font-size: 0.714286em; }
+
+.katex .fontsize-ensurer.reset-size3.size2, .katex .sizing.reset-size3.size=
+2 { font-size: 0.857143em; }
+
+.katex .fontsize-ensurer.reset-size3.size3, .katex .sizing.reset-size3.size=
+3 { font-size: 1em; }
+
+.katex .fontsize-ensurer.reset-size3.size4, .katex .sizing.reset-size3.size=
+4 { font-size: 1.14286em; }
+
+.katex .fontsize-ensurer.reset-size3.size5, .katex .sizing.reset-size3.size=
+5 { font-size: 1.28571em; }
+
+.katex .fontsize-ensurer.reset-size3.size6, .katex .sizing.reset-size3.size=
+6 { font-size: 1.42857em; }
+
+.katex .fontsize-ensurer.reset-size3.size7, .katex .sizing.reset-size3.size=
+7 { font-size: 1.71429em; }
+
+.katex .fontsize-ensurer.reset-size3.size8, .katex .sizing.reset-size3.size=
+8 { font-size: 2.05714em; }
+
+.katex .fontsize-ensurer.reset-size3.size9, .katex .sizing.reset-size3.size=
+9 { font-size: 2.46857em; }
+
+.katex .fontsize-ensurer.reset-size3.size10, .katex .sizing.reset-size3.siz=
+e10 { font-size: 2.96286em; }
+
+.katex .fontsize-ensurer.reset-size3.size11, .katex .sizing.reset-size3.siz=
+e11 { font-size: 3.55429em; }
+
+.katex .fontsize-ensurer.reset-size4.size1, .katex .sizing.reset-size4.size=
+1 { font-size: 0.625em; }
+
+.katex .fontsize-ensurer.reset-size4.size2, .katex .sizing.reset-size4.size=
+2 { font-size: 0.75em; }
+
+.katex .fontsize-ensurer.reset-size4.size3, .katex .sizing.reset-size4.size=
+3 { font-size: 0.875em; }
+
+.katex .fontsize-ensurer.reset-size4.size4, .katex .sizing.reset-size4.size=
+4 { font-size: 1em; }
+
+.katex .fontsize-ensurer.reset-size4.size5, .katex .sizing.reset-size4.size=
+5 { font-size: 1.125em; }
+
+.katex .fontsize-ensurer.reset-size4.size6, .katex .sizing.reset-size4.size=
+6 { font-size: 1.25em; }
+
+.katex .fontsize-ensurer.reset-size4.size7, .katex .sizing.reset-size4.size=
+7 { font-size: 1.5em; }
+
+.katex .fontsize-ensurer.reset-size4.size8, .katex .sizing.reset-size4.size=
+8 { font-size: 1.8em; }
+
+.katex .fontsize-ensurer.reset-size4.size9, .katex .sizing.reset-size4.size=
+9 { font-size: 2.16em; }
+
+.katex .fontsize-ensurer.reset-size4.size10, .katex .sizing.reset-size4.siz=
+e10 { font-size: 2.5925em; }
+
+.katex .fontsize-ensurer.reset-size4.size11, .katex .sizing.reset-size4.siz=
+e11 { font-size: 3.11em; }
+
+.katex .fontsize-ensurer.reset-size5.size1, .katex .sizing.reset-size5.size=
+1 { font-size: 0.555556em; }
+
+.katex .fontsize-ensurer.reset-size5.size2, .katex .sizing.reset-size5.size=
+2 { font-size: 0.666667em; }
+
+.katex .fontsize-ensurer.reset-size5.size3, .katex .sizing.reset-size5.size=
+3 { font-size: 0.777778em; }
+
+.katex .fontsize-ensurer.reset-size5.size4, .katex .sizing.reset-size5.size=
+4 { font-size: 0.888889em; }
+
+.katex .fontsize-ensurer.reset-size5.size5, .katex .sizing.reset-size5.size=
+5 { font-size: 1em; }
+
+.katex .fontsize-ensurer.reset-size5.size6, .katex .sizing.reset-size5.size=
+6 { font-size: 1.11111em; }
+
+.katex .fontsize-ensurer.reset-size5.size7, .katex .sizing.reset-size5.size=
+7 { font-size: 1.33333em; }
+
+.katex .fontsize-ensurer.reset-size5.size8, .katex .sizing.reset-size5.size=
+8 { font-size: 1.6em; }
+
+.katex .fontsize-ensurer.reset-size5.size9, .katex .sizing.reset-size5.size=
+9 { font-size: 1.92em; }
+
+.katex .fontsize-ensurer.reset-size5.size10, .katex .sizing.reset-size5.siz=
+e10 { font-size: 2.30444em; }
+
+.katex .fontsize-ensurer.reset-size5.size11, .katex .sizing.reset-size5.siz=
+e11 { font-size: 2.76444em; }
+
+.katex .fontsize-ensurer.reset-size6.size1, .katex .sizing.reset-size6.size=
+1 { font-size: 0.5em; }
+
+.katex .fontsize-ensurer.reset-size6.size2, .katex .sizing.reset-size6.size=
+2 { font-size: 0.6em; }
+
+.katex .fontsize-ensurer.reset-size6.size3, .katex .sizing.reset-size6.size=
+3 { font-size: 0.7em; }
+
+.katex .fontsize-ensurer.reset-size6.size4, .katex .sizing.reset-size6.size=
+4 { font-size: 0.8em; }
+
+.katex .fontsize-ensurer.reset-size6.size5, .katex .sizing.reset-size6.size=
+5 { font-size: 0.9em; }
+
+.katex .fontsize-ensurer.reset-size6.size6, .katex .sizing.reset-size6.size=
+6 { font-size: 1em; }
+
+.katex .fontsize-ensurer.reset-size6.size7, .katex .sizing.reset-size6.size=
+7 { font-size: 1.2em; }
+
+.katex .fontsize-ensurer.reset-size6.size8, .katex .sizing.reset-size6.size=
+8 { font-size: 1.44em; }
+
+.katex .fontsize-ensurer.reset-size6.size9, .katex .sizing.reset-size6.size=
+9 { font-size: 1.728em; }
+
+.katex .fontsize-ensurer.reset-size6.size10, .katex .sizing.reset-size6.siz=
+e10 { font-size: 2.074em; }
+
+.katex .fontsize-ensurer.reset-size6.size11, .katex .sizing.reset-size6.siz=
+e11 { font-size: 2.488em; }
+
+.katex .fontsize-ensurer.reset-size7.size1, .katex .sizing.reset-size7.size=
+1 { font-size: 0.416667em; }
+
+.katex .fontsize-ensurer.reset-size7.size2, .katex .sizing.reset-size7.size=
+2 { font-size: 0.5em; }
+
+.katex .fontsize-ensurer.reset-size7.size3, .katex .sizing.reset-size7.size=
+3 { font-size: 0.583333em; }
+
+.katex .fontsize-ensurer.reset-size7.size4, .katex .sizing.reset-size7.size=
+4 { font-size: 0.666667em; }
+
+.katex .fontsize-ensurer.reset-size7.size5, .katex .sizing.reset-size7.size=
+5 { font-size: 0.75em; }
+
+.katex .fontsize-ensurer.reset-size7.size6, .katex .sizing.reset-size7.size=
+6 { font-size: 0.833333em; }
+
+.katex .fontsize-ensurer.reset-size7.size7, .katex .sizing.reset-size7.size=
+7 { font-size: 1em; }
+
+.katex .fontsize-ensurer.reset-size7.size8, .katex .sizing.reset-size7.size=
+8 { font-size: 1.2em; }
+
+.katex .fontsize-ensurer.reset-size7.size9, .katex .sizing.reset-size7.size=
+9 { font-size: 1.44em; }
+
+.katex .fontsize-ensurer.reset-size7.size10, .katex .sizing.reset-size7.siz=
+e10 { font-size: 1.72833em; }
+
+.katex .fontsize-ensurer.reset-size7.size11, .katex .sizing.reset-size7.siz=
+e11 { font-size: 2.07333em; }
+
+.katex .fontsize-ensurer.reset-size8.size1, .katex .sizing.reset-size8.size=
+1 { font-size: 0.347222em; }
+
+.katex .fontsize-ensurer.reset-size8.size2, .katex .sizing.reset-size8.size=
+2 { font-size: 0.416667em; }
+
+.katex .fontsize-ensurer.reset-size8.size3, .katex .sizing.reset-size8.size=
+3 { font-size: 0.486111em; }
+
+.katex .fontsize-ensurer.reset-size8.size4, .katex .sizing.reset-size8.size=
+4 { font-size: 0.555556em; }
+
+.katex .fontsize-ensurer.reset-size8.size5, .katex .sizing.reset-size8.size=
+5 { font-size: 0.625em; }
+
+.katex .fontsize-ensurer.reset-size8.size6, .katex .sizing.reset-size8.size=
+6 { font-size: 0.694444em; }
+
+.katex .fontsize-ensurer.reset-size8.size7, .katex .sizing.reset-size8.size=
+7 { font-size: 0.833333em; }
+
+.katex .fontsize-ensurer.reset-size8.size8, .katex .sizing.reset-size8.size=
+8 { font-size: 1em; }
+
+.katex .fontsize-ensurer.reset-size8.size9, .katex .sizing.reset-size8.size=
+9 { font-size: 1.2em; }
+
+.katex .fontsize-ensurer.reset-size8.size10, .katex .sizing.reset-size8.siz=
+e10 { font-size: 1.44028em; }
+
+.katex .fontsize-ensurer.reset-size8.size11, .katex .sizing.reset-size8.siz=
+e11 { font-size: 1.72778em; }
+
+.katex .fontsize-ensurer.reset-size9.size1, .katex .sizing.reset-size9.size=
+1 { font-size: 0.289352em; }
+
+.katex .fontsize-ensurer.reset-size9.size2, .katex .sizing.reset-size9.size=
+2 { font-size: 0.347222em; }
+
+.katex .fontsize-ensurer.reset-size9.size3, .katex .sizing.reset-size9.size=
+3 { font-size: 0.405093em; }
+
+.katex .fontsize-ensurer.reset-size9.size4, .katex .sizing.reset-size9.size=
+4 { font-size: 0.462963em; }
+
+.katex .fontsize-ensurer.reset-size9.size5, .katex .sizing.reset-size9.size=
+5 { font-size: 0.520833em; }
+
+.katex .fontsize-ensurer.reset-size9.size6, .katex .sizing.reset-size9.size=
+6 { font-size: 0.578704em; }
+
+.katex .fontsize-ensurer.reset-size9.size7, .katex .sizing.reset-size9.size=
+7 { font-size: 0.694444em; }
+
+.katex .fontsize-ensurer.reset-size9.size8, .katex .sizing.reset-size9.size=
+8 { font-size: 0.833333em; }
+
+.katex .fontsize-ensurer.reset-size9.size9, .katex .sizing.reset-size9.size=
+9 { font-size: 1em; }
+
+.katex .fontsize-ensurer.reset-size9.size10, .katex .sizing.reset-size9.siz=
+e10 { font-size: 1.20023em; }
+
+.katex .fontsize-ensurer.reset-size9.size11, .katex .sizing.reset-size9.siz=
+e11 { font-size: 1.43981em; }
+
+.katex .fontsize-ensurer.reset-size10.size1, .katex .sizing.reset-size10.si=
+ze1 { font-size: 0.24108em; }
+
+.katex .fontsize-ensurer.reset-size10.size2, .katex .sizing.reset-size10.si=
+ze2 { font-size: 0.289296em; }
+
+.katex .fontsize-ensurer.reset-size10.size3, .katex .sizing.reset-size10.si=
+ze3 { font-size: 0.337512em; }
+
+.katex .fontsize-ensurer.reset-size10.size4, .katex .sizing.reset-size10.si=
+ze4 { font-size: 0.385728em; }
+
+.katex .fontsize-ensurer.reset-size10.size5, .katex .sizing.reset-size10.si=
+ze5 { font-size: 0.433944em; }
+
+.katex .fontsize-ensurer.reset-size10.size6, .katex .sizing.reset-size10.si=
+ze6 { font-size: 0.48216em; }
+
+.katex .fontsize-ensurer.reset-size10.size7, .katex .sizing.reset-size10.si=
+ze7 { font-size: 0.578592em; }
+
+.katex .fontsize-ensurer.reset-size10.size8, .katex .sizing.reset-size10.si=
+ze8 { font-size: 0.694311em; }
+
+.katex .fontsize-ensurer.reset-size10.size9, .katex .sizing.reset-size10.si=
+ze9 { font-size: 0.833173em; }
+
+.katex .fontsize-ensurer.reset-size10.size10, .katex .sizing.reset-size10.s=
+ize10 { font-size: 1em; }
+
+.katex .fontsize-ensurer.reset-size10.size11, .katex .sizing.reset-size10.s=
+ize11 { font-size: 1.19961em; }
+
+.katex .fontsize-ensurer.reset-size11.size1, .katex .sizing.reset-size11.si=
+ze1 { font-size: 0.200965em; }
+
+.katex .fontsize-ensurer.reset-size11.size2, .katex .sizing.reset-size11.si=
+ze2 { font-size: 0.241158em; }
+
+.katex .fontsize-ensurer.reset-size11.size3, .katex .sizing.reset-size11.si=
+ze3 { font-size: 0.28135em; }
+
+.katex .fontsize-ensurer.reset-size11.size4, .katex .sizing.reset-size11.si=
+ze4 { font-size: 0.321543em; }
+
+.katex .fontsize-ensurer.reset-size11.size5, .katex .sizing.reset-size11.si=
+ze5 { font-size: 0.361736em; }
+
+.katex .fontsize-ensurer.reset-size11.size6, .katex .sizing.reset-size11.si=
+ze6 { font-size: 0.401929em; }
+
+.katex .fontsize-ensurer.reset-size11.size7, .katex .sizing.reset-size11.si=
+ze7 { font-size: 0.482315em; }
+
+.katex .fontsize-ensurer.reset-size11.size8, .katex .sizing.reset-size11.si=
+ze8 { font-size: 0.578778em; }
+
+.katex .fontsize-ensurer.reset-size11.size9, .katex .sizing.reset-size11.si=
+ze9 { font-size: 0.694534em; }
+
+.katex .fontsize-ensurer.reset-size11.size10, .katex .sizing.reset-size11.s=
+ize10 { font-size: 0.833601em; }
+
+.katex .fontsize-ensurer.reset-size11.size11, .katex .sizing.reset-size11.s=
+ize11 { font-size: 1em; }
+
+.katex .delimsizing.size1 { font-family: KaTeX_Size1; }
+
+.katex .delimsizing.size2 { font-family: KaTeX_Size2; }
+
+.katex .delimsizing.size3 { font-family: KaTeX_Size3; }
+
+.katex .delimsizing.size4 { font-family: KaTeX_Size4; }
+
+.katex .delimsizing.mult .delim-size1 > span { font-family: KaTeX_Size1; }
+
+.katex .delimsizing.mult .delim-size4 > span { font-family: KaTeX_Size4; }
+
+.katex .nulldelimiter { display: inline-block; width: 0.12em; }
+
+.katex .delimcenter, .katex .op-symbol { position: relative; }
+
+.katex .op-symbol.small-op { font-family: KaTeX_Size1; }
+
+.katex .op-symbol.large-op { font-family: KaTeX_Size2; }
+
+.katex .op-limits > .vlist-t { text-align: center; }
+
+.katex .accent > .vlist-t { text-align: center; }
+
+.katex .accent .accent-body { position: relative; }
+
+.katex .accent .accent-body:not(.accent-full) { width: 0px; }
+
+.katex .overlay { display: block; }
+
+.katex .mtable .vertical-separator { display: inline-block; min-width: 1px;=
+ }
+
+.katex .mtable .arraycolsep { display: inline-block; }
+
+.katex .mtable .col-align-c > .vlist-t { text-align: center; }
+
+.katex .mtable .col-align-l > .vlist-t { text-align: left; }
+
+.katex .mtable .col-align-r > .vlist-t { text-align: right; }
+
+.katex .svg-align { text-align: left; }
+
+.katex svg { display: block; position: absolute; width: 100%; height: inher=
+it; fill: currentcolor; stroke: currentcolor; fill-rule: nonzero; fill-opac=
+ity: 1; stroke-width: 1; stroke-linecap: butt; stroke-linejoin: miter; stro=
+ke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; stroke-opac=
+ity: 1; }
+
+.katex svg path { stroke: none; }
+
+.katex img { border-style: none; min-width: 0px; min-height: 0px; max-width=
+: none; max-height: none; }
+
+.katex .stretchy { width: 100%; display: block; position: relative; overflo=
+w: hidden; }
+
+.katex .stretchy::after, .katex .stretchy::before { content: ""; }
+
+.katex .hide-tail { width: 100%; position: relative; overflow: hidden; }
+
+.katex .halfarrow-left { position: absolute; left: 0px; width: 50.2%; overf=
+low: hidden; }
+
+.katex .halfarrow-right { position: absolute; right: 0px; width: 50.2%; ove=
+rflow: hidden; }
+
+.katex .brace-left { position: absolute; left: 0px; width: 25.1%; overflow:=
+ hidden; }
+
+.katex .brace-center { position: absolute; left: 25%; width: 50%; overflow:=
+ hidden; }
+
+.katex .brace-right { position: absolute; right: 0px; width: 25.1%; overflo=
+w: hidden; }
+
+.katex .x-arrow-pad { padding: 0px 0.5em; }
+
+.katex .mover, .katex .munder, .katex .x-arrow { text-align: center; }
+
+.katex .boxpad { padding: 0px 0.3em; }
+
+.katex .fbox, .katex .fcolorbox { box-sizing: border-box; border: 0.04em so=
+lid; }
+
+.katex .cancel-pad { padding: 0px 0.2em; }
+
+.katex .cancel-lap { margin-left: -0.2em; margin-right: -0.2em; }
+
+.katex .sout { border-bottom-style: solid; border-bottom-width: 0.08em; }
+
+.katex-display { display: block; margin: 1em 0px; text-align: center; }
+
+.katex-display > .katex { display: block; text-align: center; white-space: =
+nowrap; }
+
+.katex-display > .katex > .katex-html { display: block; position: relative;=
+ }
+
+.katex-display > .katex > .katex-html > .tag { position: absolute; right: 0=
+px; }
+
+.katex-display.leqno > .katex > .katex-html > .tag { left: 0px; right: auto=
+; }
+
+.katex-display.fleqn > .katex { text-align: left; padding-left: 2em; }
+------MultipartBoundary--ih9l6io4MFNxyUrye3BoH9tMghoRvwoW4T0FYs0S7G----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: chrome-extension://difoiogjjojoaoomphldepapgpbgkhkb/assets/logo-OYJ34ERC.png
+
+iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAC/VBMVEUAAACZUeRbaPWySuGEWexk
+YvOPVOj2pBt4XO5ga/NfY/RtX/GBWOzJQNnEQtVgZPNabvXsP71vX/DdOdJ5W+56XO3DQ9qbUea3
+R91vX/B6W+1oYPKlTeOPVemtS+DRPtVfZPRjYvN5XO88qfxeZvPWPNNYa/Q/oPngONGNVeqeUOXU
+PdVdZfX1oSFRcvfWPNM+o/zxoh9Offj1oR+NVenMP9daZvWgTuNKhfrMP9eYUuc+pPuSVOeWUudT
+bfY7qvzqOcfzjUD1mS3CQ9pBn/uQVOmKV+vwZYF+Wu3vYYbqOsfvYoPvW418W+5ElvvtQ7ahT+Tu
+TqVHjPpZavWVUujjOdD0mC7oO8e9RtzsP7/vnxbvYIdElfvtUaLtSK6LV+vrNc/iONF4XO/mNtBQ
+dff2oh7tUp3weV9/WuzIQdm1R96gT+S3RdrfONLuT6PxdWbvXJC3R9zvYIjwZIPvY4J0Xe9wXvCC
+Wex4XO5rYPFtX/F9W+2LVupcZPRmYfK2R96JV+urS+GxSd+gT+S8RdyGWOvMQNiHWOvARNvDQ9pf
+Y/SAWu3HQdmmTeKvSuCkTuN+Wu2oTOJiY/PiONFYZfWEWexoYfJ2XO96W+6OVem6Rt3lN9BkYvNy
+XvBZZfXPP9eTVOjaO9TnNtBOevh7W+7fOdJJiPlGj/qWUuebUebUPdXdOtNNf/jXPNSQVenrNc6d
+UOXSPtZKhflWZvaZUuZRc/dpYPLJQdlFkvpVafZLg/lNfPjFQtpScPdElvtUa/aVU+ieUOVBnftC
+mvtQdfdTbvezSN9HjPpIivq4R94+pvxPd/juTqU/ovy+Rdy0SN/tRrKiT+TwYoVMgfmtS+HsO8RA
+oPzvXY5FlPo8qf3vVpnwZYDwaXrzhU7uU57vWpLyfVrzgVTuSqz0iEj0jELydmTtQ7fxbnHyel/x
+cW31lzBaZPXwX4r1myrsN8vxbHbydGn0jzz2nyPvWJXuTKn0kjmFWOzvUaD1lDU7rf3sOMjtQrnt
+P73tPr+YUufq6wTTAAAAdXRSTlMAHyAfv7/+/sAQ36AfHxBgL/6/o4BAwL+/UKB/wb+/gI/v35hw
+Rz8fgC/vv5+af19eJ+Xj39/HpJ+ff3ZgRei9omNIPz3PpYJwQh8fEO/p5t/Pw7CPj31vaS8Q4494
+V+/v39DFv7+fmpCPf3Aw7+/X786/v68WmiLDAAAPEElEQVR42u2ad1yWVRTHH95A5YV4KSQDFzKD
+CA0ZgqhlamVq7pHtvbeAIY6UnCWaoFkpmQrmKFcYlqYNTTOzabb3Xla2+3TXuefe+9z3jRf60/tf
+vE9+z++cc8+95zyPc3QdXUdXY9Z5vU8fecpVI0/vfU5jno5KGX1NQcG1o8+I+p/oI6/49qtffvzk
+43c/+OLTm676Dxuu75hbP2fOkzNnzHhp2uJbRh/TbPypVxw+zPjvvvvhF5/+8Pn379wWwIQzTr7r
+LsKfyfkvTNr/fP4xzVN/SsuWnP8x43/5/Ttvf/PmlX5MiCpYqvMnPX/nPfdc2xz5XVselvwPOP+V
+N386NGSMVX4u4Qv/T5P8KVMGhzSZ3xL1I//9Q7+++NEo99Od16v6kT/v7ozrm8w/7If/8p8uCzpa
++Hcy/t1zp/b4P/W/R/if/fX6hfrTKett/n+N8Q9MzUhvSvwD8r+7uL/69LG5S5cq/MWTJu0nfKF/
+6o7HBgdfE04JzH902WXq0yeD/pnof4W/atPwoB0QgH8c5S+7v7OSgJRfL/QD/zXkr6qrCzYNrtD5
+nxv8R5fdf/8l+HQu6HfxDzD9dXU17YPj91b4X5j6/2D8e+/tLB2g+n+xm7+p7umadT2CywDC/w34
+mv6/JH/FyfA0KcCy/tMCbMS/jvBb3BdcFnS18DH+nL96dZTYAoxv5t88qh/5910U1BFg5f8s/A/8
+hzpDBOol/wWof2r8KX/ChNjGn79d7Xyx/4gD7l1B+Wuvcdi6Bvxvy79/BH/y5OmhjTOhd1dX/L8B
+vqZ/7VqRBCcI/jRafzh/npZ/VP/k6RUVFfGRjSlACv9TyUf/LxP8h9Y+AgZw/xMHCP0drssn/Klk
+/7P4r2N8YkBVSWJc0/lDTmMrRq6Cgo7CAL7/CZ/rH0z+1o7x/5H6JzN+Scnss5rKv8D2OBjA9x/E
+P5/8rXAq838N6j/C+LMrA1ow0sb/ifDPvdAJYIAR/3bkb0V6/EF/ZWVZWWzg+mfn93cCGSD4ZANO
+oRuQGtCD81tw/1P9VYK/PDHcf/nxwx8ygP465iRYHcXqLAww8j+D/C2E8PX4Vwn+otIIf/zTKf8X
+yf8e+FeyX0ep+f/I+qXkADzBYetEfgHG/UcvgRmUz+JPA8DjX8b4pQtj/TkA+Lp+nn4j3Px6MECe
+P1MIf+7UHUXkj8MJvwXEX+QfwRN+6cJWfjLApf/mCwY4Y85mN+7LZP1B/hwwgMYf+AdIAcqnSQD6
+Mf/LmAELx40bF27fgiZ/rLz/97/EpZ/Wf2kAxp8dgBn0lGrP858YoMa/lBnQ1h4Bg/+m3HopF3P9
+Kyh/reTPBANUPtv/hTQNL2L8igrIfx5/yn/weOslzOT/BL+MEfV3BeiHCzgYAPFn9fexVW2uY5eP
+9Iuo/1kAUD/jFxeH21IA+LQBpPwhMgA2/bT+gwHAp/7PKJQX4PQcyH+TX+yxbUKD/96NAyACpn44
+/0/kv3dQ9PdV+7DIfjz+s03+HXE2Awz+rz9DDsSo/PWSP2MaGID6841/NPLqRL7/dP4dPpsBJv8j
+UYBHWfQ/yc5fMIDXH8IvZP8dUtg3p2+/WAhEUfzAMoM/3mqAyj9E+C//eW7nMVEpI0gCoH7IP9YA
+gAHzVP3hw8X+7ydvH7HIf5DwiQFxtl2g6mcN6N/sAib0r1X0wwUMDID9H0Ll92X1jxUgeQEy+eNt
+xXgA579t8N36sQESBrQT/FVRhJ8j6u90tv9Di6gNcbr/xz/+uLUU3gT8Qwpf3X96A07qLxgg+Jva
+pKf3Xcf1Q/0vq7w0Pn6gzh9f7XVs66rG86fx868DGMD49Pyt4fcf2/5H/uPV9gP5bDvf9D8OoO4E
+A4BPD2Dt/K2kB7Aef8qf6OdqqvJFA6rXP/T/Ynb+gQHI5w0Arf+Cv2iRhe917OvMVwLohwEEv3+z
+AQQY0Eb4H/jTzfq3UPN/9USfYw/BrTof9Zv5v1ic/2CA1C/8X1FCluSXsvijfj8OGHD7NzCAMv3v
+3n+iAW4nDOAN4DqRgOh/EgDMv2LOJwHwWOWPfcXGX23hYwMMBjA+wVMHkPOX3z8ql5v+5/o7RTtk
+JXuM8GsDIGgA/fkfBkBgAMZ/stTPLoBG/iE/epY32s3/FfmB4o8NOBog9OP9sxL3/zg33+MtL+/k
+axQf899swOfNnQsGyAaA8qkDEuNi4+ECRvRj/ud5gF/+dc9oGX+dvwziD/WHHUCw/9UBRBuHrfay
+AYf8j6VHYCs9/uOrqzvxy2h4HuEvWbIAsnHAWPsARq+/OIDBASgYwP2PDaBo/yLjB/L8F/kXQYCg
+n/AXbMwTAQjIX4oDuGm8AcEBDBiADbCI/6VwDsdFXMod0CksWZyA0ZL/xHaWBudg/pv8R7T6D/UP
+ByBggNqA8/tXotKER8bGRuOmS541S/K39wynDkD96v5/CPxfbx8A0gYADID6w/n8Apjos41jUsMo
+/+slSwj/ie3PPUVdMNbk3xBzUswlcAGifMx/YwAkDUA+c4DY/xGxNjzhc/2Ev/lysgXMAVxMFB39
+xeAFDOuvOQBsLwxQ80/wqQHFxYkRPqw3Cd5ZZAk+MYDwNz/rcS4wBrCXwfST8G0D0Cnc/zsIHwwI
+ZXytAaL1B/afNywsgebj/PlM/xLwP+XvTXauNAZgKfAG6lhcx2grBBcYQPEwAFDqfzHUH2pAAuGL
+/EP+w92cIcYA1Al+hRL9WP/N848W4GTyVBj3/9cLFixg/Kcof+tQ50ZjABvVFANKqkA/9T/UP8l/
+wEcNYPnHHQD6t67JdswB5BkYAqv3cUVGhgsDIP/KFmH9B/0TCZ8Z4IX8V/lrGhxzAA0z+Nx6cwCO
++3/TP3wACkmI/EWoXxxAlM89wPRz/nPM/w+vWfPqBsc1gC04lr0E5fUXB4A4gKAbkA+ApAGzS3AA
+oZ7/nD9/Pj2EMql+XgBQf8MG51zK1+pvbkzHgjn1Oh8HUDuQPyEUDMD9h/5n5x8NANl+mbQGlxvx
+37rm1YYN2c5pun6oP+B/4OMAZJPkTwYD1AGMfgGmfGKAlx7ClP+EwV851Blh489x8edB/aH64f4J
+BlC8uwFi8gmf7n8PzUKRfzz+nL/7fCfF1gBb438AGiAYQKMBRL70P+pHfjmpRB7hf8y/DStX7urj
+RF3sZwAzw4y/1F8D5z8YAPHXGmARf1H/MhO8G3V+A+UPIv87G0CsDqD/HmUAB/pZAwYGtML8lxuw
+GgLA+OVi/20H/zP9u3fVdqMjKGyA3fpxACz3X00LOQAGA7AAa/7nfCiAbP9vFvyGBsrfVZvGZlBu
+vn3/g37ZAIMBrvzT/I/17zkt/3bXEgfQ1f8Gy/7jBdBSf8D/hC8NwAYY9j/yof4DH/XX1g5K4//A
+KH0ACvz9Ch8bcNSPBlj1P4B8ff/x/Cf8Ld0dsUYoF3DUz/JvCuQf4/P6IxsgMCCA/3kAgP8s+J/x
+z1de/+MAEvVL/gFjAMP41IBWwgB/+VfO+Rh/yd9N+EMdXFEx+gDIzif6xQDkCB9AgAH6/q9G/+MF
+XOPTBNjSTZ+UdTT44P+7Zf6hfmhAysAAfQCh8eH8N/ngf1wpuTCAhReQqN+V/5yPBuABrOvX999W
+9P+gPra3b6jf8ga8BeoH/nJhwPGK/mqIv7n/nlXjP9Q6qMw1voBS9h91AAxgkb9IGgD8BE+y1I8N
+CPDR/4Ns/CjUr/HNAViV5JeCAZD/YeQ/2s7/7/w7eDDN9ikY1H8LH+vPEYUvDQD/UwPCvRo/L8EX
+7fF4klX+loPboi0GpID/Mf8zCkOc9HzUr/lfMUDG38Paf8nvmSVj3U3jP9PFYsBoPoDaj3zxGVwR
+SUAYQOkNIBog6k8YG0Bk8vh7GR4MIPwNu4FvN8D1BVSR+KUfH8BR/cDn5x8YgPtPzGBSfb44j9YX
+ryH8lZK/02ZAiuBj/YNfeugDOGyAjxcGMP1kiQu4Rs66PJtewFX/79z5hq0MXG9+ATYYfgnhfGzA
+4fwHA9T6k+lR8Zdv3rtX4ddy/W/ssyVhlPkFTAa0iekTcACM+tGAML3+ZqbCP5klGhDwf63Qv2+f
+Y1snmvVPfnwVlzP9yBFsAEvhAggGqPWXFeA8H5tIkPqzV56/dP9z/W/s62U14FrgwxcwOSFyzpRT
+gfsPB7BggNCP9c/rYfqZ/7e+2tCA/mcO2JNk/yZX8T//AiaHvHKKjOTvQIkDgA8DCDTAPH+z6G7E
+BlCLP+HvSXOsq4PKr5MHIJ+4teb+X4760QDK1wYw1AGZ2IBq+Uf4GAHDBeQCiPprCJ/Xv9bs17NQ
+PwygwQCNT87fYdQBwMf9v03of8tWBeANJMRfvQBUhbIwpLdWVlu6fGAAxp8NYHy09AEf/Q98dIC5
+jskQfPIFEvAr2BdYAb8BC9MbgO3baQSyRf6D/1H/W2n+/6nrGN/8Aonc/wbGBTaA4HEA1pNOhOn5
+Cw3YFo3fPZCY4TsYv0b5AqiE53/rQAZw/8MAjk6AsyD/kL+T85OcgCtf8FtA/OELlOWt4tmKUFay
+MAD4G8UAalhqVjbqr5X8fcAPtArrDP9XifoHA1BlABMGBoD/jQGM4G/jfPR/4FWUI/Tj+aO9AVVe
+wAkDhoEBMIBk9c8W/z1dnEaskH4q39BfrPAnJogpNPTf2ACo9Qf1J1ny325CX37/0PnuBkxsDR+v
+fxv96H9GxN/oBQInAtOPLwCWwwAe+Pz8E1eucJr/5gDGnX9JTuNXOjSgxgBeHwANg8fz9AbIxYf6
+E8QK1fig3xgAyuKUukAfwOD+O4j8Xk4wK1bj2wcQXnw8T/of9e/i9R/4v3cJcgTP4m/RjwMIpTqn
+Il8MYHaD/4HfywluRQ7k9Y/y7QOwTPXxYTgAp/yVwGcXAMr/Pc0Jcp1l9T/q178CCO/J+WT/Qf3n
+F1Dgd3eCXldbB9DVQn8nxscV3VMZwDEDtqn8JKcJKx71uwbw9C28YUE28A3/70F+0D6gBdCmH/iG
+BXABhwLYVP24Wru/AGD3zzyP7WlPNjYAzYw/7oXEceYAishv6+/xLDEA3KLmf68+TnOWL1HVT/id
+oPmzrbRusgGFC2gXp7krNiIR/Q9fAfg3ocvQg9gAJDVPPeZXXNuEiIi2yamB6FgT+nTvnpR0fvcu
+ac7RdXQdXY1Y/wIujfZsvCS7WQAAAABJRU5ErkJggg==
+
+------MultipartBoundary--ih9l6io4MFNxyUrye3BoH9tMghoRvwoW4T0FYs0S7G------
